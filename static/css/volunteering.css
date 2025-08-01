@@ -1,0 +1,125 @@
+#volunteer {
+    padding: 50px 20px;
+    background-color: #13064af7;
+    text-align: center;
+}
+
+.volunteer-container {
+    display: flex;
+    justify-content: space-between; /* Equal spacing between items */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+    gap: 20px; /* Space between each item */
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.volunteer-item {
+    background-color: #09022cf7;
+    padding: 25px; /* Increased padding for more height */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Ensures items fit within the container and leaves space for the gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 400px; /* Increased minimum height */
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #68deff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.volunteer-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.volunteer-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.volunteer-image {
+    max-width: 250px; /* Increased image width */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #68deff;
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.volunteer-item:hover .volunteer-image {
+    transform: scale(1.3); /* Zoom effect on image when item is hovered */
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.volunteer-details {
+    text-align: center;
+    color: #b36cff;
+}
+
+.volunteer-role {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #912ffa;
+}
+
+.volunteer-organization {
+    font-size: 20px;
+    color: #a545ff;
+    margin-bottom: 10px;
+}
+
+.volunteer-duration {
+    font-size: 16px;
+    color: #9f39fe;
+    margin-bottom: 10px;
+}
+
+.volunteer-description {
+    font-size: 16px;
+    color: #76f1ff;
+}
+/* Keyframes for pop animation */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to volunteer items */
+.volunteer-item {
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start smaller */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Add the animate class when in view */
+.volunteer-item.animate {
+    animation: popIn 0.5s ease-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .volunteer-item {
+        width: calc(100% - 20px); /* Adjust width for two items per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .volunteer-item {
+        width: calc(100% - 20px); /* Adjust width for one item per row */
+    }
+}

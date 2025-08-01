@@ -1,0 +1,66 @@
+<!-- templates/project.html -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
+
+<div id="projects">
+    <button class="nav-button" id="prev-project">&lt;</button>
+
+    <!-- Project 1 -->
+    <div class="project-container" id="project-1">
+        <div class="project-image">
+            <img src="https://i.ibb.co/nq2cYZh/mav.jpg" alt="Dr. Mav Project Image">
+        </div>
+        <div class="project-details">
+            <div class="project-title">Dr. Mav</div>
+            <div class="project-subtitle">Vital Sign Monitoring Rover</div>
+            <div class="project-description">
+                A hospital rover, remotely controlled via joystick or web, allows doctors to observe patients and access vital signs through a dashboard. It features UV sterilization, contactless heart rate and temperature measurement, and stores all data for emergency response.
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-container" id="project-2" style="display: none;">
+        <div class="project-image">
+            <img src="https://i.ibb.co/qMcSz08k/Picsart-25-02-11-19-42-37-522.jpg" alt="Automatic Drug Dispenser">
+        </div>
+        <div class="project-details">
+            <div class="project-title">Automatic Drug Dispesner</div>
+            <div class="project-subtitle">Medicine dispesning through vending machine from QRcode based prescription</div>
+            <div class="project-description">
+                Developed an automated medication management system using QR codes for digitized prescriptions, ensuring sorted doses and a user-friendly interface. Integrated a Power Pi for tracking patient entries and analyzing common illness spread. Added real-time tracking and an OTC module for seamless non-prescription tablet purchases, enhancing healthcare efficiency and safety.
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-container" id="project-3" style="display: none;">
+        <div class="project-image">
+            <img src="https://i.ibb.co/s6vwpFz/car.png" alt="Mobile Operated Car">
+        </div>
+        <div class="project-details">
+            <div class="project-title">Mobile Operated Car</div>
+            <div class="project-subtitle">Mobile Operated Vehicle using App</div>
+            <div class="project-description">
+                We developed a mobile app-controlled vehicle using an Arduino microcontroller to manage motor control and navigation. The Arduino interprets commands from the app, enabling precise forward, backward, left, and right movements. This project offers a hands-on introduction to IoT and robotics, blending software and hardware for an educational and fun experience—like having your own robot car at your command!
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-container" id="project-4" style="display: none;">
+        <div class="project-image">
+            <img src="https://i.ibb.co/MZHgC6w/Screenshot-2024-08-10-122433.png" alt="Obstacle Avoidance Robot">
+        </div>
+        <div class="project-details">
+            <div class="project-title">Obstacle Avoidance Robot</div>
+            <div class="project-subtitle">Ultrasonic used Obstacle Avoidance Robot</div>
+            <div class="project-description">
+                Our obstacle avoidance vehicle project uses Arduino and a motor driver to build a smart system capable of navigating its environment by detecting and avoiding obstacles. This versatile solution highlights the practical application of innovative technologies in real-world scenarios.
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-button" id="next-project">&gt;</button>
+</div>
+
+<script src="{{ url_for('static', filename='js/projects.js') }}"></script>

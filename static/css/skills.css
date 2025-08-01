@@ -1,0 +1,111 @@
+#skills {
+    padding: 40px;
+    background-color: #0c013af7;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.skill-box {
+    background-color: #05038c;
+    border: 3px solid #01e6ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(20% - 25px); /* Maintains equal width for all boxes */
+    box-sizing: border-box;
+    height: 150px; /* Ensures all boxes have the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 20px #01e6ff; /* Neon glow effect */
+}
+
+.skill-box img {
+    max-width: 60px; /* Maintains image size */
+    height: auto;
+    margin-bottom: auto;
+    animation: imagePulse 1.5s infinite; /* Continuous zoom in and zoom out */
+}
+
+.skill-box:hover img {
+    animation: imageZoomInOut 0.8s infinite; /* Faster zoom in and zoom out on hover */
+}
+
+.skill-box p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px; /* Adjusted font size */
+    padding-top: 10px;
+    color: #ffffff;
+}
+
+@keyframes imagePulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes imageZoomInOut {
+    0%, 100% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Keyframes for pop-up animation */
+@keyframes pop-up {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation class for skill boxes */
+.skill-box.animate {
+    animation: pop-up 0.5s ease-out forwards;
+}
+
+@media (max-width: 1024px) {
+    .skill-box {
+        width: calc(33.33% - 20px); /* Adjust width for 3 boxes */
+    }
+}
+
+/* For mobile (2 boxes) */
+@media (max-width: 768px) {
+    .skill-box {
+        width: calc(50% - 15px); /* Adjust width for 2 boxes */
+    }
+}
+
+/* For smaller mobile screens (1 box) */
+@media (max-width: 480px) {
+    .skill-box {
+        width: calc(100% - 10px); /* Adjust width for 1 box */
+    }
+}

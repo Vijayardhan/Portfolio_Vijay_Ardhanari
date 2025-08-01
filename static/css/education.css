@@ -1,0 +1,249 @@
+#education {
+    min-height: 100vh;
+    height: auto;
+    background-color: #13064af7; 
+    position: relative; 
+    padding: 50px 0; 
+}
+
+/* Vertical line styling */
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: calc(100vh - 100px); 
+    border-left: 2px solid #ffffff; 
+    top: 30px;
+}
+
+/* Circle styling */
+.circle {
+    position: absolute;
+    width: 95px; 
+    height: 95px; 
+    border-radius: 50%;
+    background-size: cover; 
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+/* Top circle positioning */
+.top-circle {
+    top: -37px; 
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -90px;
+}
+
+/* Bottom circle positioning */
+.bottom-circle {
+    bottom: -37px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -10px;
+}
+
+/* Hover effect for circles */
+.top-circle:hover {
+    transform: scale(1.2) translateX(-75px); /* Adjust the translateX value as needed */
+    box-shadow: 0 6px 30px #bb63ff;
+}
+.bottom-circle:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+/* Left and right box styling */
+.left-box, .right-box {
+    position: absolute;
+    width: 30%; 
+    background-color: #0d0131; 
+    padding: 20px;
+    overflow-y: auto;
+    color: #ffffff; 
+    border-radius: 40px;
+    padding-left: 40px;
+    border-color: #ffffff;
+    border-style: solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+}
+
+.left-box {
+    right: 10%;
+    height: calc(100vh - 200px); 
+    top: 60px; 
+    left: 10%; 
+}
+
+.right-box {
+    height: calc(100vh - 250px);
+    top: 90px; 
+    right: 10%;
+}
+
+/* Hover effect for left and right boxes */
+.left-box:hover, .right-box:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 6px 30px #ad42ff;
+}
+
+/* Content styling */
+.content h1 {
+    font-size: 1.8em; 
+    margin-bottom: 10px;
+    color: #5676f8;
+}
+
+.content .specialization {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #6980d8;
+}
+
+.content .cgpa {
+    font-size: 1em;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    color: #546ac1;
+}
+
+.content h2 {
+    font-size: 1.4em; 
+    margin-bottom: 10px; 
+    color: #31b3ee;
+}
+
+.content h3 {
+    font-size: 1.1em; 
+    margin-bottom: 10px;
+    color: #4aaedc;
+}
+
+.content p {
+    font-size: 1em; 
+    margin-bottom: 10px;
+    color: #46acdb;
+    white-space: pre-wrap;
+    line-height: 18px;
+}
+
+.spacer {
+    height: 5px; 
+}
+
+/* Define keyframes for left-box animation */
+@keyframes slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Define keyframes for right-box animation */
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation class for left-box */
+.animate-left {
+    animation: slide-in-left 1s ease-out forwards;
+}
+
+/* Animation class for right-box */
+.animate-right {
+    animation: slide-in-right 1s ease-out forwards;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-anchor: none;
+}
+
+#education * {
+    will-change: transform;
+}
+
+
+@media (max-width: 768px) {
+    /* Align the line and circle to the left side */
+    .vertical-line {
+        left: 20px;
+        transform: none;
+        height: calc(140vh - 450px);
+        top: 30px;
+    }
+
+    /* Adjust circle size */
+    .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Adjust circle positioning */
+    .top-circle {
+        top: -30px;
+        left: 0;
+        transform: none;
+        margin-left: -10px;
+    }
+
+    .bottom-circle {
+        bottom: -30px;
+        left: 0;
+        transform: none;
+        margin-left: -10px;
+    }
+
+    /* Place containers on the right side with reduced width and spacing between */
+    .left-box, .right-box {
+        width: 75%;
+        left: auto;
+        right: auto;
+        margin-left: 50px;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    .left-box {
+        top: 80px;
+        height: auto;
+    }
+
+    .right-box {
+        top: 690px;
+        height: auto;
+    }
+
+    /* Reduce font size for smaller screens */
+    .content h1 {
+        font-size: 1.2em;
+    }
+
+    .content .specialization,
+    .content .cgpa,
+    .content h2,
+    .content h3,
+    .content p {
+        font-size: 0.8em;
+    }
+
+    /* Updated fix to stop jumping */
+    #education {
+        padding: 20px 0;
+        height: auto;
+        min-height: 130vh;        /* EXTENDED height as per your request */
+        overflow-anchor: none;    /* Prevent scroll jumping */
+    }
+}

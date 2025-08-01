@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay A - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Add any fonts or icons if needed -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    {% include 'navbar.html' %}
+
+    <!-- About Section -->
+    {% include 'home.html' %}
+
+    <!-- About Section -->
+    {% include 'about.html' %}
+
+    <!-- Education Section -->
+    {% include 'education.html' %}
+
+    <!-- Skills Section -->
+    {% include 'skills.html' %}
+
+    <!-- Experience Section -->
+    {% include 'experience.html' %}
+
+    <!-- Projects Section -->
+    {% include 'projects.html' %}
+
+    <!-- Achievements Section -->
+    {% include 'achievements.html' %}
+
+    <!-- Publications Section -->
+    {% include 'publications.html' %}
+
+    <!-- Volunteering Section -->
+    {% include 'volunteering.html' %}
+
+    <!-- Contact Section -->
+    {% include 'contact.html' %}
+
+</body>
+</html>

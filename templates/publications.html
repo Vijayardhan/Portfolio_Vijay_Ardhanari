@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}">
+
+<section id="publications">
+    <button class="nav-button" id="prev-publication">&lt;</button>
+
+    <div class="publication-container" id="publication-1">
+        <div class="publication-image">
+            <img src="https://i.ibb.co/tMjS0KdZ/1630594774018.jpg" alt="EchoGlove Project Image">
+        </div>
+        <div class="publication-details">
+            <div class="publication-title">
+                EchoGlove: Assistive Smart Glove for Gesture-Based Communication and Health Monitoring
+            </div>
+            <div class="publication-doi">
+                <strong>DOI: </strong>
+                <a href="https://doi.org/10.22214/ijraset.2025.66821" target="_blank">View Paper</a>
+            </div>
+            <div class="publication-description">
+                This smart glove integrates an ESP32 microcontroller with Bluetooth, a speaker for voice output, a pulse sensor for health monitoring, an ultrasonic sensor for obstacle detection, and flex sensors for hand gesture recognition. It converts gestures into speech, aids navigation, and monitors heart rate, enhancing communication and safety for individuals with speech impairments.
+            </div>
+            <a href="https://drive.google.com/file/d/1YUxU2yz3NwZv8csdpsJG2QC-SvOq3gqX/view?usp=sharing" class="certificate-button" target="_blank">View Certificate</a>
+        </div>
+    </div>
+
+    <button class="nav-button" id="next-publication">&gt;</button>
+</section>
+
+<script src="{{ url_for('static', filename='js/publications.js') }}"></script>

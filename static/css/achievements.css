@@ -1,0 +1,136 @@
+.certificate-button {
+    font-size: 16px;
+    color: #fff;
+    background-color: #9d00ff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.certificate-button:hover {
+    background-color: #6b04a2;
+    color: #fffbfb;
+    box-shadow: 0 6px 30px #b667f8;
+}
+
+#achievements {
+    padding: 50px 20px;
+    background-color: #13064af7;
+    text-align: center;
+}
+
+.certifications-wrapper {
+    display: flex;
+    justify-content: space-between; /* Equal spacing between containers */
+    flex-wrap: wrap; /* Wrap containers to next line on smaller screens */
+    gap: 30px; /* Space between containers */
+    max-width: 1200px; /* Optional: to control the maximum width */
+    margin: 0 auto; /* Center the wrapper */
+}
+
+.certification-container {
+    width: 30%; /* Adjust width to fit the number of containers per row */
+    background-color: #11083bf7; 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(129, 254, 254);
+    box-sizing: border-box; /* Include padding and border in width */
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #68deff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.certification-container:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.certification-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    color: #ffffff;
+}
+
+.certification-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 9px;
+    margin-bottom: 10px;
+    margin-left: -2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #60eaff;
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.certification-container:hover .certification-image {
+    transform: scale(1.2); /* Zoom effect on image when container is hovered */
+    box-shadow: 0 6px 20px #bb63ff;
+}
+
+.certification-subtitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #a717fb;
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.certification-date {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #8f0ac4;
+}
+
+.certification-organization {
+    font-size: 17px;
+    font-weight: bold;
+    color: #7d0fb8;
+    margin-bottom: 8px;
+}
+
+.certification-description {
+    font-size: 15px;
+    color: #65b5ff;
+}
+
+/* Keyframes for pop animation */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to certification containers */
+.certification-container {
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start smaller */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Add the animate class when in view */
+.certification-container.animate {
+    animation: popIn 0.5s ease-out forwards;
+}
+
+@media screen and (max-width: 768px) {
+    .certification-container {
+        width: calc(100% - 15px); /* Adjust width for 2 containers per row */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .certification-container {
+        width: calc(100% - 10px); /* Adjust width for 1 container per row */
+    }
+}
