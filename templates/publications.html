@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}">
 
 <section id="publications">
+    <h2 class="publications-heading">
+    <span class="heading-text">Publications</span>
+    <span class="underline"></span>
+  </h2>
     <button class="nav-button" id="prev-publication">&lt;</button>
 
     <div class="publication-container" id="publication-1">
@@ -26,3 +30,26 @@
 </section>
 
 <script src="{{ url_for('static', filename='js/publications.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                // Optional: Unobserve after animation triggers
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5, // Trigger when 50% of element is visible
+        rootMargin: '0px 0px -100px 0px' // Adjust trigger point
+    });
+
+    // Observe the publications heading
+    const pubHeading = document.querySelector('#publications h2.publications-heading');
+    if (pubHeading) {
+        observer.observe(pubHeading);
+    }
+});
+</script>

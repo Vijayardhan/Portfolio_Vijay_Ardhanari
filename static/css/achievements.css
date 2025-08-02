@@ -21,6 +21,8 @@
     text-align: center;
 }
 
+
+
 .certifications-wrapper {
     display: flex;
     justify-content: space-between; /* Equal spacing between containers */
@@ -132,5 +134,76 @@
 @media screen and (max-width: 480px) {
     .certification-container {
         width: calc(100% - 10px); /* Adjust width for 1 container per row */
+    }
+}
+
+
+/* Achievements Section with Animation */
+#achievements {
+    padding: 40px 20px;
+    background-color: #13064af7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated Header */
+#achievements h2.achievements-heading {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 0 20px 20px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Text slides from left */
+#achievements h2.achievements-heading .heading-text {
+    display: inline-block;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-out;
+}
+
+/* Underline slides from right */
+#achievements h2.achievements-heading .underline {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+    border-radius: 2px;
+    transform: translateX(100px);
+    transition: all 0.5s ease-out;
+    left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state */
+#achievements h2.achievements-heading.animate {
+    opacity: 1;
+}
+
+#achievements h2.achievements-heading.animate .heading-text,
+#achievements h2.achievements-heading.animate .underline {
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #achievements h2.achievements-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    #achievements h2.achievements-heading .underline {
+        width: 80px;
+        left: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    #achievements h2.achievements-heading {
+        font-size: 2rem;
     }
 }

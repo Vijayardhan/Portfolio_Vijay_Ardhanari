@@ -197,3 +197,13 @@ footer p {
 .custom-container.animate {
     animation: popIn 0.5s ease-out forwards;
 }
+
+@media (max-width: 768px) {
+    #contact h2 {
+        font-size: 28px !important;
+    }
+
+    #contact h2 span {
+        width: 40px !important;
+    }
+}

@@ -109,3 +109,76 @@
         width: calc(50% - 10px); /* Adjust width for 1 box */
     }
 }
+
+
+
+
+/* Skills Section with Animation */
+#skills {
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated Header */
+#skills h2.skills-heading {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 0 20px 20px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Text slides from left */
+#skills h2.skills-heading .heading-text {
+    display: inline-block;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-out;
+}
+
+/* Underline slides from right */
+#skills h2.skills-heading .underline {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+    border-radius: 2px;
+    transform: translateX(100px);
+    transition: all 0.5s ease-out;
+    left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state */
+#skills h2.skills-heading.animate {
+    opacity: 1;
+}
+
+#skills h2.skills-heading.animate .heading-text,
+#skills h2.skills-heading.animate .underline {
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #skills h2.skills-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    #skills h2.skills-heading .underline {
+        width: 80px;
+        left: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    #skills h2.skills-heading {
+        font-size: 2rem;
+    }
+}

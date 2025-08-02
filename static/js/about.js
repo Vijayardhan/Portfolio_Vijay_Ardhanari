@@ -19,3 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(aboutSection);
     }
 });
+
+
+// Add this to your existing observer code
+const aboutObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.about-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+aboutObserver.observe(document.querySelector('#about'));

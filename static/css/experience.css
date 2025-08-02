@@ -1,16 +1,18 @@
 #experience {
-    height: 210vh; /* Extend the height to 600vh */
+    height: 220vh; /* Extend the height to 600vh */
     position: relative;
     background-color: #13064af7; /* Background color */
+    
 }
+
 
 .center-line {
     position: absolute;
     left: 50%;
     width: 4px;
     background-color: #00FFFF;
-    height: calc(100% - 20px); /* Height to leave space at top and bottom */
-    top: 30px; /* Space at the top of the line */
+    height: calc(100% - 150px); /* Height to leave space at top and bottom */
+    top: 190px; /* Space at the top of the line */
     transform: translateX(-50%);
 }
 
@@ -26,6 +28,7 @@
     align-items: center;
     border-style: solid;
     border-color: #7b00ff;
+    margin-top: 8%;
 }
 
 .circle img {
@@ -34,7 +37,7 @@
     border-radius: 50%;
 }
 
-.circle1 { top: 24px; }
+.circle1 { top: 54px; }
 
 .circle5 { top: 44%}
 
@@ -53,14 +56,14 @@
 
 
 .experience-box {
-    width: 370px; /* Increased width */
-    padding: 20px;
+    width: 400px; /* Increased width */
+    padding: 30px;
     background-color: #11083bf7; /* Slightly different color for visibility */
     color: white;
     box-shadow: 0px 0px 15px rgba(57, 239, 255, 0.947); /* Added glow effect */
     border-radius: 10px; /* Rounded corners */
     position: absolute;
-    margin-top: -20px; /* Move boxes upward */
+    margin-top: 100px; /* Move boxes upward */
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -282,7 +285,7 @@
     .circle {
         left: 5%; /* Move the circles to the left */
         transform: none; /* Reset the transform property */
-        margin-top: -10px;
+        margin-top: 110px;
     }
 
     .experience-box {
@@ -291,6 +294,7 @@
         width: 70%; /* Reduce the width of the boxes */
         padding: 15px; /* Reduce padding inside the boxes */
         margin-bottom: 100px; /* Space between each box */
+
     }
 
     /* Adjust font sizes inside the boxes */
@@ -316,9 +320,9 @@
     }
 
     /* Aligning boxes with circles */
-    .box1 { top: calc(24px + 120px - 20px); }
+    .box1 { top: calc(24px + 270px - 20px); }
 
-    .box5 { top: 120px }
+    .box5 { top: 300px }
 
 
     /* Adjust button containers */
@@ -332,10 +336,18 @@
         margin: 10px 0;
         width: 100%;
     }
+    #experience {
+    height: 230vh; /* Extend the height to 600vh */
+    position: relative;
+    
+    
+}
+    
 }
 
 /* Media query for phone screens */
 @media screen and (max-width: 480px) {
+    
     .experience-box {
         width: 75%; /* Set width to ensure the box fits within the screen */
         margin: 6px auto; /* Increase margin to create more space between boxes */
@@ -351,10 +363,11 @@
         padding: 10px; /* Adjust padding for content spacing inside the box */
         font-size: 14px; /* Maintain smaller font size for readability */
         box-sizing: border-box; /* Ensure padding and border are included in the width */
+        
     }
 
     .circle5 {
-        margin-top: 85px;
+        margin-top: 200px;
     }
 
 
@@ -373,7 +386,83 @@
 
     /* Extend height of the experience section */
     .experience-section {
-        min-height: 1200vh; /* Adjust this value as needed to extend the height */
-        padding-bottom: 100px; /* Add padding at the bottom to ensure space at the end */
+    min-height: 2000vh; /* Enough height to contain all boxes */
+    padding-bottom: 200px;
+    position: relative; /* Important to position children correctly */
+    overflow: visible;  /* Make sure no content is cut off */
+}
+
+
+}
+
+
+
+/* Experience Section with Animation */
+#experience {
+    padding: 40px 20px;
+    background-color: #13064af7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated Header */
+#experience h2.experience-heading {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 0 20px 20px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Text slides from left */
+#experience h2.experience-heading .heading-text {
+    display: inline-block;
+    transform: translateX(-100px);
+    transition: all 0.3s ease-out;
+}
+
+/* Underline slides from right */
+#experience h2.experience-heading .underline {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+    border-radius: 2px;
+    transform: translateX(100px);
+    transition: all 0.3s ease-out;
+    left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state */
+#experience h2.experience-heading.animate {
+    opacity: 1;
+}
+
+#experience h2.experience-heading.animate .heading-text,
+#experience h2.experience-heading.animate .underline {
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #experience h2.experience-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    #experience h2.experience-heading .underline {
+        width: 80px;
+        left: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    #experience h2.experience-heading {
+        font-size: 2rem;
     }
 }

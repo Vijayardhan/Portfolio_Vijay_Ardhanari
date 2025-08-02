@@ -192,5 +192,69 @@
 }
 
 
+/* About Section Heading - Same as Achievements */
+/* About Section with Animation */
+#about {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #13064af7; /* Added to match other sections */
+    overflow: hidden;
+}
+
+/* Animated Header */
+#about h2.about-heading {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 0 20px 20px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Text slides from left */
+#about h2.about-heading .heading-text {
+    display: inline-block;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-out;
+}
+
+/* Underline slides from right */
+#about h2.about-heading .underline {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+    border-radius: 2px;
+    transform: translateX(100px);
+    transition: all 0.5s ease-out;
+    left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state */
+#about h2.about-heading.animate {
+    opacity: 1;
+}
+
+#about h2.about-heading.animate .heading-text,
+#about h2.about-heading.animate .underline {
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #about h2.about-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    #about h2.about-heading .underline {
+        width: 80px;
+        left: calc(50% - 40px);
+    }
+}
 
 

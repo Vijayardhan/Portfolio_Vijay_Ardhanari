@@ -180,7 +180,7 @@ html {
     .vertical-line {
         left: 20px;
         transform: none;
-        height: calc(140vh - 450px);
+        height: calc(190vh - 450px);
         top: 30px;
     }
     /* Adjust circle size */
@@ -191,14 +191,14 @@ html {
 
     /* Adjust circle positioning */
     .top-circle {
-        top: -30px;
+        top: -150px;
         left: 0;
         transform: none;
         margin-left: -10px;
     }
 
     .bottom-circle {
-        bottom: -40px;
+        bottom: 370px;
         left: 0;
         transform: none;
         margin-left: -10px;

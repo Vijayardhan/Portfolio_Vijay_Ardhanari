@@ -18,3 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 });
+
+// Add to your existing IntersectionObserver code
+const volunteerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.volunteer-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+volunteerObserver.observe(document.querySelector('#volunteer'));

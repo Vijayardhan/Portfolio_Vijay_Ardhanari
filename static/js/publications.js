@@ -60,3 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(container);
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const publicationsSection = document.querySelector('#publications');
+  const publicationsHeading = document.querySelector('#publications h2.publications-heading');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        publicationsHeading.classList.add('animate');
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observer.observe(publicationsSection);
+});

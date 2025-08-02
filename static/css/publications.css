@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 110vh;
     padding: 50px;
     background-color: #0c013af7;
     position: relative;
@@ -211,4 +211,68 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+
+
+
+
+/* Publications Section */
+#publications {
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* Animated Header - Both elements start hidden */
+#publications h2.publications-heading {
+  color: #fff;
+  font-size: 2.8rem;
+  text-align: center;
+  margin: 0 auto 60px;
+  padding: 0 20px 20px;
+  position: relative;
+  opacity: 0;
+}
+
+/* Text slides from left */
+#publications h2.publications-heading .heading-text {
+  display: inline-block;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-out;
+}
+
+/* Underline slides from right */
+#publications h2.publications-heading .underline {
+  position: absolute;
+  bottom: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #9d00ff, #60eaff);
+  border-radius: 2px;
+  transform: translateX(100px);
+  transition: all 0.5s ease-out;
+  left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state - both move to center simultaneously */
+#publications h2.publications-heading.animate {
+  opacity: 1;
+}
+
+#publications h2.publications-heading.animate .heading-text,
+#publications h2.publications-heading.animate .underline {
+  transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #publications h2.publications-heading {
+    font-size: 2.2rem;
+  }
+  
+  #publications h2.publications-heading .underline {
+    width: 80px;
+    left: calc(50% - 40px);
+  }
 }

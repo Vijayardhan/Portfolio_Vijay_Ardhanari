@@ -123,3 +123,76 @@
         width: calc(100% - 20px); /* Adjust width for one item per row */
     }
 }
+
+
+
+
+/* Volunteer Section with Animation */
+#volunteer {
+    padding: 40px 20px;
+    background-color: #13064af7; /* Matching other sections */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animated Header */
+#volunteer h2.volunteer-heading {
+    color: #fff;
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 0 auto 60px;
+    padding: 0 20px 20px;
+    position: relative;
+    opacity: 0;
+}
+
+/* Text slides from left */
+#volunteer h2.volunteer-heading .heading-text {
+    display: inline-block;
+    transform: translateX(-100px);
+    transition: all 0.5s ease-out;
+}
+
+/* Underline slides from right */
+#volunteer h2.volunteer-heading .underline {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+    border-radius: 2px;
+    transform: translateX(100px);
+    transition: all 0.5s ease-out;
+    left: calc(50% - 50px); /* Center position */
+}
+
+/* Animated state */
+#volunteer h2.volunteer-heading.animate {
+    opacity: 1;
+}
+
+#volunteer h2.volunteer-heading.animate .heading-text,
+#volunteer h2.volunteer-heading.animate .underline {
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #volunteer h2.volunteer-heading {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    #volunteer h2.volunteer-heading .underline {
+        width: 80px;
+        left: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    #volunteer h2.volunteer-heading {
+        font-size: 2rem;
+    }
+}

@@ -73,3 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// Add to your existing IntersectionObserver code
+const projectsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.projects-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+projectsObserver.observe(document.querySelector('#projects'));

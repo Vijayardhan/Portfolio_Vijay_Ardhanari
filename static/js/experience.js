@@ -31,3 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(box);
     });
 });
+
+// Add this to your existing observer code
+const experienceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.experience-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+experienceObserver.observe(document.querySelector('#experience'));

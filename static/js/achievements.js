@@ -18,3 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(container);
     });
 });
+
+// Add this to your existing observer code
+const achievementsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.achievements-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+achievementsObserver.observe(document.querySelector('#achievements'));

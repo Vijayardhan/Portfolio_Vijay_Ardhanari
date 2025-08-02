@@ -21,3 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(box);
     });
 });
+
+// Add to your existing IntersectionObserver code
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelector('.skills-heading').classList.add('animate');
+        }
+    });
+}, { threshold: 0.3 });
+
+skillsObserver.observe(document.querySelector('#skills'));
