@@ -198,7 +198,7 @@ html {
     }
 
     .bottom-circle {
-        bottom: 370px;
+        bottom: 400px;
         left: 0;
         transform: none;
         margin-left: -10px;
@@ -221,7 +221,7 @@ html {
     }
 
     .right-box {
-        top: 780px;
+        top: 720px;
         height: auto;
     }
 
