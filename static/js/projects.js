@@ -1,28 +1,50 @@
 let currentProject = 1;
+const totalProjects = 4; // Update this number to match your total projects
 
+function updateProjectDisplay() {
+    // Hide all projects
+    for (let i = 1; i <= totalProjects; i++) {
+        const project = document.getElementById(`project-${i}`);
+        if (project) {
+            project.style.display = 'none';
+        }
+    }
+
+    // Show current project
+    const current = document.getElementById(`project-${currentProject}`);
+    if (current) {
+        current.style.display = 'flex';
+    }
+
+    // Update nav button visibility
+    const prevBtn = document.getElementById('prev-project');
+    const nextBtn = document.getElementById('next-project');
+
+    if (prevBtn && nextBtn) {
+        prevBtn.style.visibility = currentProject > 1 ? 'visible' : 'hidden';
+        nextBtn.style.visibility = currentProject < totalProjects ? 'visible' : 'hidden';
+    }
+}
+
+// Add event listeners
 document.getElementById('prev-project').addEventListener('click', () => {
     if (currentProject > 1) {
-        document.getElementById(`project-${currentProject}`).style.display = 'none';
         currentProject--;
-        document.getElementById(`project-${currentProject}`).style.display = 'flex';
+        updateProjectDisplay();
     }
 });
 
 document.getElementById('next-project').addEventListener('click', () => {
-    if (currentProject < 4) { // Update this number to reflect the total number of projects
-        document.getElementById(`project-${currentProject}`).style.display = 'none';
+    if (currentProject < totalProjects) {
         currentProject++;
-        document.getElementById(`project-${currentProject}`).style.display = 'flex';
+        updateProjectDisplay();
     }
 });
 
-
-function toggleMenu() {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('show');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
+    updateProjectDisplay(); // Set initial state
+
+    // Intersection animation observer
     const options = {
         root: null,
         rootMargin: '0px',
@@ -41,14 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.project-container').forEach(container => {
         observer.observe(container);
     });
-});
 
-
-// Add event listeners to all navigation links to close the menu when a link is clicked
-document.addEventListener('DOMContentLoaded', () => {
+    // Menu close on link click
     const links = document.querySelectorAll('nav ul li a');
     const menu = document.getElementById('nav-menu');
-
     links.forEach(link => {
         link.addEventListener('click', () => {
             menu.classList.remove('show');

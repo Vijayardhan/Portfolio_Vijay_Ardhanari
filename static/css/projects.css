@@ -1,42 +1,47 @@
 #projects {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 50px;
     background-color: #0c013af7;
     position: relative;
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    overflow-x: hidden;
 }
 
 .project-container {
     position: relative;
-    width: 60%;
+    width: 100%;
     max-width: 900px;
-    height: 500px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.project-container.animate {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 1;
 }
 
 .project-image {
-    width: 50%;
-    height: 50%;
-    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(110, 255, 255, 0.941);
-    border-style: solid;
-    border-radius: 20px;
-    border-color: #60eaff;
+    border: 2px solid #60eaff;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    border-radius: 20px;
     transition: transform 0.3s ease;
-    border-radius: 15px;
 }
 
 .project-details {
@@ -48,11 +53,9 @@
     top: 20px;
     transform: translateY(0);
     transition: transform 0.3s ease;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-style: solid;
     border-radius: 20px;
-    border-color: #68deff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #68deff;
 }
 
 .project-title {
@@ -90,8 +93,12 @@
     box-shadow: 0 6px 30px #b667f8;
 }
 
-/* Circular Navigation Buttons */
-.nav-button {
+/* Project Nav Buttons */
+#projects .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
     background-color: #60eaff;
     border: none;
     font-size: 24px;
@@ -103,87 +110,122 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#prev-project {
-    left: 100px;
-    top: 20%;
-    transform: translateY(-50%);
+#projects #prev-project {
+    left: 20px;
 }
 
-#next-project {
-    right: 100px;
-    top: 20%;
-    transform: translateY(-50%);
+#projects #next-project {
+    right: 20px;
 }
 
-.nav-button:hover {
+#projects .nav-button:hover {
     background-color: #6b04a2;
     color: #fff;
     box-shadow: 0 6px 20px rgba(110, 255, 255, 0.4);
 }
 
+#projects #prev-project,
+#projects #next-project {
+    visibility: visible;
+}
+
+/* Fade-in animation */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
 @media screen and (max-width: 1024px) {
     .project-container {
         width: 80%;
-        height: auto;
     }
 
     .project-image {
-        height: 50%;
+        width: 250px;
+        height: 250px;
     }
 
     .project-details {
         width: 90%;
         top: 10px;
-        transform: translateY(0);
+    }
+
+    #projects #prev-project {
+        left: -60px;
+    }
+
+    #projects #next-project {
+        right: -60px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .project-container {
         width: 90%;
-        height: auto;
     }
 
     .project-image {
-        height: 40%;
+        width: 220px;
+        height: 220px;
     }
 
     .project-details {
         width: 100%;
         top: 10px;
-        transform: translateY(0);
     }
 
-    #prev-project, #next-project {
+    #projects .nav-button {
         width: 40px;
         height: 40px;
         font-size: 20px;
+    }
+
+    #projects #prev-project {
+        left: -50px;
+    }
+
+    #projects #next-project {
+        right: -50px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .project-container {
         width: 100%;
-        height: auto;
     }
 
     .project-image {
-        height: 30%;
+        width: 180px;
+        height: 180px;
     }
 
     .project-details {
         width: 100%;
         top: 10px;
-        transform: translateY(0);
     }
 
-    #prev-project, #next-project {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
+    #projects .nav-button {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+        top: 32%;
+    }
+
+    #projects #prev-project {
+        left: 20px;
+    }
+
+    #projects #next-project {
+        right: 20px;
     }
 }

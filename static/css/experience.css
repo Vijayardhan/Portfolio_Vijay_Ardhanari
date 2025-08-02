@@ -1,5 +1,5 @@
 #experience {
-    height: 200vh; /* Extend the height to 600vh */
+    height: 210vh; /* Extend the height to 600vh */
     position: relative;
     background-color: #13064af7; /* Background color */
 }
@@ -316,9 +316,9 @@
     }
 
     /* Aligning boxes with circles */
-    .box1 { top: calc(24px + 100px - 20px); }
+    .box1 { top: calc(24px + 120px - 20px); }
 
-    .box5 { top: 70px }
+    .box5 { top: 120px }
 
 
     /* Adjust button containers */
@@ -354,7 +354,7 @@
     }
 
     .circle5 {
-        margin-top: 100px;
+        margin-top: 85px;
     }
 
 

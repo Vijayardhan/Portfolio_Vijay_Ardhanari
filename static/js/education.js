@@ -1,21 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     const leftBox = document.querySelector('.left-box');
     const rightBox = document.querySelector('.right-box');
-    const education = document.querySelector('#education');
 
-    // Define the Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
+    const isMobile = window.innerWidth <= 768;
+
+    // LEFT BOX OBSERVER (trigger when it enters view)
+    const observerLeft = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add animation class when in view
                 leftBox.classList.add('animate-left');
-                rightBox.classList.add('animate-right');
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1 // Adjust threshold as needed
+        threshold: 0.2,
+        rootMargin: isMobile ? '0px 0px -100px 0px' : '0px'
     });
 
-    // Start observing the #about-extend section
-    observer.observe(education);
+    observerLeft.observe(leftBox);
+
+    // RIGHT BOX OBSERVER (trigger only when right box scrolls into view)
+    const observerRight = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                rightBox.classList.add('animate-right');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: isMobile ? '0px 0px -100px 0px' : '0px'
+    });
+
+    observerRight.observe(rightBox);
 });

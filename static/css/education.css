@@ -132,24 +132,24 @@
 }
 
 /* Define keyframes for left-box animation */
+/* Keyframes */
 @keyframes slide-in-left {
-    0% {
+    from {
         opacity: 0;
         transform: translateX(-100%);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
-/* Define keyframes for right-box animation */
 @keyframes slide-in-right {
-    0% {
+    from {
         opacity: 0;
         transform: translateX(100%);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateX(0);
     }
@@ -183,7 +183,6 @@ html {
         height: calc(140vh - 450px);
         top: 30px;
     }
-
     /* Adjust circle size */
     .circle {
         width: 60px;
@@ -199,7 +198,7 @@ html {
     }
 
     .bottom-circle {
-        bottom: -30px;
+        bottom: -40px;
         left: 0;
         transform: none;
         margin-left: -10px;
@@ -217,12 +216,12 @@ html {
     }
 
     .left-box {
-        top: 80px;
+        top: 104px;
         height: auto;
     }
 
     .right-box {
-        top: 690px;
+        top: 730px;
         height: auto;
     }
 
@@ -243,7 +242,15 @@ html {
     #education {
         padding: 20px 0;
         height: auto;
-        min-height: 130vh;        /* EXTENDED height as per your request */
+        min-height: 135vh;        /* EXTENDED height as per your request */
         overflow-anchor: none;    /* Prevent scroll jumping */
     }
 }
+
+/* Initial state */
+.left-box, .right-box {
+    opacity: 0;
+    transform: translateX(0); /* fallback */
+}
+
+
