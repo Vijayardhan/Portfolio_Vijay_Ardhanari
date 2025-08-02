@@ -106,6 +106,6 @@
 /* For smaller mobile screens (1 box) */
 @media (max-width: 480px) {
     .skill-box {
-        width: calc(100% - 10px); /* Adjust width for 1 box */
+        width: calc(50% - 10px); /* Adjust width for 1 box */
     }
 }
