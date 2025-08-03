@@ -175,82 +175,108 @@ html {
 }
 
 
-@media (max-width: 768px) {
-    /* Align the line and circle to the left side */
-    .vertical-line {
-        left: 20px;
-        transform: none;
-        height: calc(190vh - 450px);
-        top: 30px;
-    }
-    /* Adjust circle size */
-    .circle {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* Adjust circle positioning */
-    .top-circle {
-        top: -150px;
-        left: 0;
-        transform: none;
-        margin-left: -10px;
-    }
-
-    .bottom-circle {
-        bottom: 400px;
-        left: 0;
-        transform: none;
-        margin-left: -10px;
-    }
-
-    /* Place containers on the right side with reduced width and spacing between */
-    .left-box, .right-box {
-        width: 75%;
-        left: auto;
-        right: auto;
-        margin-left: 50px;
-        padding: 10px;
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
-
-    .left-box {
-        top: 104px;
-        height: auto;
-    }
-
-    .right-box {
-        top: 720px;
-        height: auto;
-    }
-
-    /* Reduce font size for smaller screens */
-    .content h1 {
-        font-size: 1.2em;
-    }
-
-    .content .specialization,
-    .content .cgpa,
-    .content h2,
-    .content h3,
-    .content p {
-        font-size: 0.8em;
-    }
-
-    /* Updated fix to stop jumping */
-    #education {
-        padding: 20px 0;
-        height: auto;
-        min-height: 135vh;        /* EXTENDED height as per your request */
-        overflow-anchor: none;    /* Prevent scroll jumping */
-    }
+.mobile-wrapper {
+    position: relative;
+    width: 100%;
+    top: -380px;
 }
 
-/* Initial state */
 .left-box, .right-box {
     opacity: 0;
-    transform: translateX(0); /* fallback */
+}
+
+.left-box {
+    transform: translateX(-100px);
+}
+
+.right-box {
+    transform: translateX(100px);
 }
 
 
+
+
+/* Mobile View (up to 767px) */
+@media (max-width: 767px) {
+    #education {
+        min-height: 180vh;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    .vertical-line {
+        left: 35px;
+        height: calc(100% - 40px);
+        top: 40px;
+        border-left: 2px solid #ffffff;
+        position: absolute;
+    }
+
+    /* Top circle at the top of vertical line */
+    .top-circle {
+        position: absolute;
+        top: -130px;
+        left: -12px;
+        width: 60px;
+        height: 60px;
+        margin-left: -20px;
+        transform: none;
+    }
+
+    /* Left box below top circle */
+    .left-box {
+        position: relative;
+        width: calc(100% - 80px);
+        margin: 80px 0 40px 60px;
+        height: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin-top: 120px;
+    }
+
+    /* Bottom circle on vertical line below left box */
+    .bottom-circle {
+        position: absolute;
+        top: calc(50% - 0px);
+        left: -12px;
+        width: 60px;
+        height: 60px;
+        margin-left: 0;
+        transform: none;
+    }
+
+    /* Right box below bottom circle */
+    .right-box {
+        position: relative;
+        width: calc(100% - 80px);
+        margin: 100px 0 40px 60px;
+        height: auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin-top: 150px;
+    }
+
+    .mobile-wrapper {
+        position: relative;
+        width: 100%;
+        top: 0;
+    }
+
+    /* Adjustments for very small phones */
+    @media (max-width: 420px) {
+        .vertical-line {
+            left: 30px;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            left: -10px;
+        }
+        .left-box, .right-box {
+            width: calc(100% - 60px);
+            margin-left: 50px;
+        }
+    }
+}

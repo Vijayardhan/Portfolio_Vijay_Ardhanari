@@ -1,260 +1,235 @@
-.about-container {
-    opacity: 0; /* Start invisible */
-    transform: scale(0.8); /* Start smaller */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
+/* ======================
+   About Section - Fully Responsive
+   ====================== */
 
-/* Add the animate class when in view */
-.about-container.animate {
-    animation: popIn 0.5s ease-out forwards;
-}
-
-
-/* Ensure existing styles for #about remain unchanged */
+/* Mobile-First Base Styles */
 #about {
-    background-color: #13064af7; /* Light background color */
-    color: #ffffff; /* Dark text color for contrast */
-    padding: 50px 0; /* Vertical padding */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-    position: relative;
-    overflow: auto; /* Add scroll if needed */
-}
-
-/* Existing styles for .about-container, .about-box, etc. */
-.about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 100vh; /* Full viewport height */
-    position: relative; /* Relative positioning for absolute children */
-}
-
-/* Add pop-up animation to the .about-box */
-.about-box {
-    background-color: #0d0131; /* White background for the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 5px 5px 28px 10px rgba(255, 255, 255, 0.66); /* Shadow effect */
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1000px; /* Adjust as needed */
-    width: 70%;
-    text-align: center; /* Center align text inside the box */
-    position: absolute; /* Absolute positioning to center within parent */
-    top: 50%; /* Center vertically within the viewport height */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
-    border-style: solid;
-    border-radius: 20px;
-    border-color: #ffffff;
-}
-
-
-
-
-.about-box:hover {
-    /* transform: scale(1.5); (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    box-shadow: 0 6px 30px #ad42ff;
-}
-
-/* Wrapper to place profile picture and content side by side */
-.profile-wrapper-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Styling for the circular profile picture */
-.profile-circle-1 {
-    width: 180px; /* Increased size */
-    height: 180px; /* Increased size */
-    border-radius: 50%;
-    background-color: #8b36f2; /* Circular background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px; /* Space between profile picture and content */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    border-style: solid;
-    border-color: #ffffff;
-}
-
-.profile-circle-1 img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; /* Ensure image is rounded */
-    object-fit: cover;
-}
-
-.profile-circle-1:hover {
-    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    box-shadow: 0 6px 30px #fffdff;
-}
-
-/* Styling for the content on the right side of the profile picture */
-.about-content {
-    max-width: 800px; /* Adjust as needed */
-}
-
-.about-content p {
-    text-align: justify;
-    font-size: 20px; /* Increased font size */
-    line-height: 1.6;
-    margin-bottom: 20px; /* Space below the paragraph */
-}
-
-/* Resume button styling */
-.resume-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #925efb;
-    color: white;
-    text-decoration: none;
-    font-size: 18px; /* Increased font size */
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-top: 10px; /* Space above the button */
-    margin-bottom: 10px;
-    border-style: solid;
-    border-color: #e3c6f9;
-}
-
-.resume-button:hover {
-    background-color: #6102ae;
-    color: #fffbfb;
-    box-shadow: 0 6px 30px #6102ae;
-}
-
-@media (max-width: 768px) {
-    /* Fix the about section */
-    #about {
-        padding: 20px;
-        display: block; /* Let it flow normally */
-        min-height: unset; /* Remove fixed height */
-        height: auto;
-    }
-
-    .about-container {
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        margin: 0 auto;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-box {
-        width: 100%;
-        max-width: none;
-        padding: 20px;
-        box-shadow: 3px 3px 20px rgba(255, 255, 255, 0.5);
-        border-radius: 15px;
-        text-align: left;
-        position: relative; /* remove absolute behavior if inherited */
-        top: unset;
-        left: unset;
-        transform: none;
-    }
-
-    .profile-wrapper-1 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .profile-circle-1 {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 15px;
-    }
-
-    .profile-circle-1 img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .about-content p {
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
-
-    .resume-button {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin-top: 15px;
-    }
-}
-
-
-/* About Section Heading - Same as Achievements */
-/* About Section with Animation */
-#about {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #13064af7; /* Added to match other sections */
-    overflow: hidden;
+  background-color: #13064af7;
+  color: #ffffff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Animated Header */
 #about h2.about-heading {
-    color: #fff;
-    font-size: 2.8rem;
-    text-align: center;
-    margin: 0 auto 60px;
-    padding: 0 20px 20px;
-    position: relative;
-    opacity: 0;
+  color: #fff;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0 auto 40px;
+  padding: 0 20px 20px;
+  position: relative;
+  opacity: 0;
+  width: 100%;
 }
 
-/* Text slides from left */
 #about h2.about-heading .heading-text {
-    display: inline-block;
-    transform: translateX(-100px);
-    transition: all 0.5s ease-out;
+  display: inline-block;
+  transform: translateX(-100px);
+  transition: all 0.5s ease-out;
 }
 
-/* Underline slides from right */
 #about h2.about-heading .underline {
-    position: absolute;
-    bottom: 0;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #9d00ff, #60eaff);
-    border-radius: 2px;
-    transform: translateX(100px);
-    transition: all 0.5s ease-out;
-    left: calc(50% - 50px); /* Center position */
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #9d00ff, #60eaff);
+  border-radius: 2px;
+  transform: translateX(100px);
+  transition: all 0.5s ease-out;
+  left: calc(50% - 40px);
 }
 
-/* Animated state */
 #about h2.about-heading.animate {
-    opacity: 1;
+  opacity: 1;
 }
 
 #about h2.about-heading.animate .heading-text,
 #about h2.about-heading.animate .underline {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    #about h2.about-heading {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
-    }
-    
-    #about h2.about-heading .underline {
-        width: 80px;
-        left: calc(50% - 40px);
-    }
+/* Main Container */
+.about-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.about-container.animate {
+  opacity: 1;
+  transform: scale(1);
+}
 
+/* Content Box */
+.about-box {
+  background-color: #0d0131;
+  border-radius: 20px;
+  box-shadow: 5px 5px 28px 10px rgba(255, 255, 255, 0.66);
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+}
+
+/* Profile Section */
+.profile-wrapper-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.profile-circle-1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #8b36f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.profile-circle-1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Content */
+.about-content {
+  width: 100%;
+  text-align: center;
+}
+
+.about-content p {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.resume-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #925efb;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  border: 2px solid #e3c6f9;
+}
+
+/* Hover Effects */
+.about-box:hover {
+  box-shadow: 0 6px 30px #ad42ff;
+}
+
+.profile-circle-1:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px #fffdff;
+}
+
+.resume-button:hover {
+  background-color: #6102ae;
+  color: #fffbfb;
+  box-shadow: 0 6px 30px #6102ae;
+}
+
+/* ==============
+   Media Queries
+   ============== */
+
+/* Small Tablets (600px+) */
+@media (min-width: 600px) {
+  .profile-circle-1 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+  }
+  
+  .resume-button {
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Tablets (768px+) */
+@media (min-width: 768px) {
+  #about h2.about-heading {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+  
+  .about-box {
+    padding: 40px;
+  }
+  
+  .about-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Laptops (992px+) */
+@media (min-width: 992px) {
+  #about h2.about-heading {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+  }
+  
+  .about-content p {
+    font-size: 1.3rem;
+  }
+  
+  .profile-circle-1 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Device-Specific Fixes */
+/* Samsung Galaxy S24 FE */
+@media screen and (device-width: 412px) and (device-height: 892px) {
+  .profile-circle-1 {
+    margin-top: 20px;
+  }
+}
+
+/* Vivo Y29e */
+@media screen and (device-width: 360px) and (device-height: 800px) {
+  #about {
+    padding: 30px 15px;
+  }
+  
+  .about-box {
+    padding: 25px;
+  }
+}

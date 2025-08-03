@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isMobile = window.innerWidth <= 768;
 
-    // LEFT BOX OBSERVER (trigger when it enters view)
+    // LEFT BOX OBSERVER - trigger earlier
     const observerLeft = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.2,
-        rootMargin: isMobile ? '0px 0px -100px 0px' : '0px'
+        threshold: 0, // Trigger as soon as any part is visible
+        rootMargin: isMobile ? '0px 0px -150px 0px' : '-100px 0px -100px 0px' // Negative bottom margin to trigger earlier
     });
 
     observerLeft.observe(leftBox);
 
-    // RIGHT BOX OBSERVER (trigger only when right box scrolls into view)
+    // RIGHT BOX OBSERVER - trigger earlier
     const observerRight = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.2,
-        rootMargin: isMobile ? '0px 0px -100px 0px' : '0px'
+        threshold: 0, // Trigger as soon as any part is visible
+        rootMargin: isMobile ? '0px 0px -150px 0px' : '-100px 0px -100px 0px' // Negative bottom margin to trigger earlier
     });
 
     observerRight.observe(rightBox);

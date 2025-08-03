@@ -64,6 +64,7 @@
     color: #94a9fc;
 }
 
+
 #name {
     font-size: 80px; /* Increase font size as needed */
     color: transparent; /* Make text color transparent for gradient effect */
@@ -72,12 +73,32 @@
     margin: 20px 0; /* Increase space between intro text and name */
 }
 
+#name {
+    animation: nameEntrance 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes nameEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Styling for the sign icon */
 .sign-icon {
     width: 70px; /* Adjust size as needed */
     margin-bottom: 20px; /* Space below the icon */
     animation: pop-shake 1.5s infinite; /* Apply the animation */
 }
+
+
+
 
 /* Keyframes for the pop shake effect */
 @keyframes pop-shake {
@@ -136,6 +157,18 @@
     border-radius: 50%; /* Ensure image is rounded */
 }
 
+.profile-circle {
+    position: relative;
+    border: 3px solid transparent;
+    animation: borderPulse 3s infinite;
+}
+
+@keyframes borderPulse {
+    0% { border-color: rgba(255,255,255,0.1); }
+    50% { border-color: rgba(207, 21, 247, 0.6); }
+    100% { border-color: rgba(255,255,255,0.1); }
+}
+
 @keyframes float {
     0% { transform: translateY(0); }
     20% { transform: translateY(-40px); } /* Increased floating distance */
@@ -153,7 +186,7 @@
     margin-top: 30px;
     margin-left: 5px;
     width: 140px;
-    height: 38px;
+    height: 48px;
     background-color: #925efb;
     color: rgb(255, 255, 255);
     text-decoration: none;
@@ -168,6 +201,19 @@
     background-color: #6102ae;
     color: #fffbfb; /* Change text color on hover */
     box-shadow: 0 6px 30px #6102ae;
+}
+
+.contact-button {
+    animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from {
+        box-shadow: 0 0 10px #925efb;
+    }
+    to {
+        box-shadow: 0 0 20px #925efb, 0 0 30px #925efb;
+    }
 }
 
 /* Styling for social icons */
@@ -186,7 +232,21 @@
     transform: scale(1.2); /* Zoom in on hover */
 }
 
+.social-icons a {
+    opacity: 0;
+    transform: translateY(10px);
+}
 
+.social-icons a:nth-child(1) { animation: fadeInUp 0.5s 0.8s forwards; }
+.social-icons a:nth-child(2) { animation: fadeInUp 0.5s 1.0s forwards; }
+.social-icons a:nth-child(3) { animation: fadeInUp 0.5s 1.2s forwards; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @media (max-width: 768px) {
     #home {
