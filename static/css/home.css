@@ -1,381 +1,256 @@
+/* ============ BASE STYLES ============ */
 #home {
-    height: 100vh;
-    background-color: #0c013af7; /* Matte black background */
-    color: #fff; /* White text color for contrast */
-    position: relative; /* Ensure the pseudo-element can be positioned absolutely */
-    overflow: hidden; /* Hide any overflow from the pseudo-element */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 50px; /* Adjust padding as needed */
+    padding: 0 10%;
+   
+    transition: background-color 0.5s ease;
 }
 
-/* Bubble animation in the background */
-#home::before {
+.content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 0 30px;
+}
+
+.content-left {
+    flex: 1;
+    padding-left: 100px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.intro-text {
+    max-width: 700px;
+}
+
+.sign-icon {
+    width: 50px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    animation: bounce 2s infinite;
+}
+
+.greeting {
+    font-size: 1.8rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+}
+
+#name {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 15px 0;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+.typing-container {
+    height: 70px;
+    margin: 25px 0;
+    overflow: hidden;
+}
+
+.typing-text {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #495057;
+    border-right: 3px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    animation: 
+        fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+    margin: 40px 0;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.5s forwards;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    filter: drop-shadow(0 5px 10px rgba(106, 17, 203, 0.3));
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 20px rgba(106, 17, 203, 0.4);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 1.8s forwards;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    pointer-events: none; /* Ensure it doesn't interfere with interactions */
-    z-index: -1; /* Place it behind other content */
-    animation: bubble 15s infinite;
-}
-
-/* Keyframes for bubble animation */
-@keyframes bubble {
-    0% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    }
-    50% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
-    }
-    100% {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    }
-}
-
-/* Layout for content on the left */
-.content-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 200px; /* Increased space between content and profile picture */
-    margin-left: 150px; /* Increased space on the left side */
-    flex: 1; /* Take up remaining space */
-}
-
-.typing-svg-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Adjust as needed */
-
-    @media screen and (max-width: 468px){  
-        margin-left: 100px;
-    }
-}
-
-/* Styling for introduction text */
-.intro-text p {
-    font-size: 28px; /* Increase font size as needed */
-    margin: 0;
-    color: #94a9fc;
-}
-
-
-#name {
-    font-size: 80px; /* Increase font size as needed */
-    color: transparent; /* Make text color transparent for gradient effect */
-    background: rgb(183, 75, 245);
-    background-clip: text; /* Apply gradient to text */
-    margin: 20px 0; /* Increase space between intro text and name */
-}
-
-#name {
-    animation: nameEntrance 1s ease-out forwards;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform: rotate(45deg);
+    z-index: -1;
+    transition: all 0.6s ease;
     opacity: 0;
-    transform: translateY(20px);
-}
-
-@keyframes nameEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Styling for the sign icon */
-.sign-icon {
-    width: 70px; /* Adjust size as needed */
-    margin-bottom: 20px; /* Space below the icon */
-    animation: pop-shake 1.5s infinite; /* Apply the animation */
-}
-
-
-
-
-/* Keyframes for the pop shake effect */
-@keyframes pop-shake {
-    0%, 100% { 
-        transform: scale(1);
-    }
-    10%, 30%, 50%, 70% {
-        transform: scale(1.1) translateX(-2px);
-    }
-    20%, 40%, 60% {
-        transform: scale(1.1) translateX(2px);
-    }
-    80% {
-        transform: scale(1.2);
-    }
-    90% {
-        transform: scale(1.15);
-    }
-}
-
-
-/* Style for the floating circular profile picture */
-.profile-container {
-    position: absolute;
-    right: 200px; /* Increased space from the right */
-    top: 32%; /* Position from the top of the container */
-    transform: translateY(-70%); /* Center vertically */
-    width: 300px; /* Increased size */
-    height: 300px; /* Increased size */
-    animation: float 10s ease-in-out infinite;
-}
-
-.profile-circle {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    background-color: #8b36f2; /* Circular background color */
-    box-shadow: 0 6px 30px rgb(255, 255, 255); /* Increased shadow size */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-color: #ffffff;
-}
-
-.profile-circle:hover {
-    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-    box-shadow: 0 6px 30px rgb(191, 0, 255);
-}
-
-.profile-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%; /* Ensure image is rounded */
-}
-
-.profile-circle {
-    position: relative;
-    border: 3px solid transparent;
-    animation: borderPulse 3s infinite;
-}
-
-@keyframes borderPulse {
-    0% { border-color: rgba(255,255,255,0.1); }
-    50% { border-color: rgba(207, 21, 247, 0.6); }
-    100% { border-color: rgba(255,255,255,0.1); }
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    20% { transform: translateY(-40px); } /* Increased floating distance */
-    40% { transform: translateX(-30px); } /* Increased floating distance */
-    60% { transform: translateX(30px); } /* Increased floating distance */
-    80% { transform: translateY(-40px); } /* Increased floating distance */
-    100% { transform: translateY(0); }
-}
-
-/* Contact button styling */
-.contact-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 5px;
-    width: 140px;
-    height: 48px;
-    background-color: #925efb;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 20px; /* Increased font size */
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-style: solid;
-    border-color: #e3c6f9;
 }
 
 .contact-button:hover {
-    background-color: #6102ae;
-    color: #fffbfb; /* Change text color on hover */
-    box-shadow: 0 6px 30px #6102ae;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(106, 17, 203, 0.6);
 }
 
-.contact-button {
-    animation: pulseGlow 2s infinite alternate;
+.contact-button:hover::before {
+    animation: glow 1.5s ease infinite;
+    opacity: 1;
 }
 
-@keyframes pulseGlow {
-    from {
-        box-shadow: 0 0 10px #925efb;
-    }
-    to {
-        box-shadow: 0 0 20px #925efb, 0 0 30px #925efb;
-    }
-}
-
-/* Styling for social icons */
-.social-icons {
+.profile-container {
+    flex: 1;
     display: flex;
-    gap: 20px; /* Space between icons */
-    margin-left: 5px;
+    justify-content: center;
+    animation: fadeInRight 1s ease-out;
 }
 
-.social-icons img {
-    width: 45px; /* Adjust size as needed */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+.profile-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(106,17,203,0.1) 0%, rgba(37,117,252,0.1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: float 6s ease-in-out infinite;
 }
 
-.social-icons img:hover {
-    transform: scale(1.2); /* Zoom in on hover */
+.profile-image {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.25));
+    transition: transform 0.5s ease;
+    animation: float 4s ease-in-out infinite 1s;
 }
 
-.social-icons a {
-    opacity: 0;
-    transform: translateY(10px);
+.profile-circle:hover .profile-image {
+    transform: scale(1.05) rotate(5deg);
 }
 
-.social-icons a:nth-child(1) { animation: fadeInUp 0.5s 0.8s forwards; }
-.social-icons a:nth-child(2) { animation: fadeInUp 0.5s 1.0s forwards; }
-.social-icons a:nth-child(3) { animation: fadeInUp 0.5s 1.2s forwards; }
+/* ============ DARK THEME ============ */
+body.dark-mode #home {
+    background-color: #0a041a;
+}
+
+body.dark-mode .greeting {
+    color: #b39ddb;
+}
+
+body.dark-mode .typing-text {
+    color: #d1c4e9;
+}
+
+body.dark-mode .profile-circle {
+    background: linear-gradient(135deg, rgba(106,17,203,0.2) 0%, rgba(37,117,252,0.2) 100%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .sign-icon {
+    filter: drop-shadow(0 2px 4px rgba(255,255,255,0.1));
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+    from { 
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 @keyframes fadeInUp {
-    to {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media (max-width: 768px) {
-    #home {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px; /* Adjust padding as needed */
-    }
-
-    .content-left {
-        margin-right: 0; /* Remove right margin */
-        margin-left: 0;  /* Remove left margin */
-        align-items: center; /* Center content */
-        text-align: center; /* Center text */
-    }
-
-    .sign-icon {
-        width: 50px; /* Adjust size for smaller screens */
-        margin-bottom: 15px; /* Adjust spacing */
-    }
-
-    .intro-text p {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    #name {
-        font-size: 50px; /* Adjust font size for smaller screens */
-        margin: 15px 0; /* Adjust spacing */
-    }
-
-    .rotating-text {
-        font-size: 32px; /* Adjust font size */
-        transform: translateY(0); /* Adjust position */
-        margin: 20px 0; /* Add margin for spacing */
-    }
-
-    .profile-container {
-        position: static; /* Make it part of the normal flow */
-        margin-top: 20px; /* Adjust spacing */
-        width: 200px; /* Adjust size */
-        height: 200px; /* Adjust size */
-        transform: translateY(0); /* Remove translation */
-        
-    }
-
-    .social-icons {
-        margin-top: 20px; /* Adjust margin for spacing */
-        justify-content: center; /* Center the icons */
-        gap: 15px; /* Adjust gap */
-    }
-
-    .contact-button {
-        margin-top: 20px; /* Adjust spacing */
-        width: 120px; /* Adjust size */
-        height: 34px; /* Adjust size */
-        font-size: 18px; /* Adjust font size */
-    }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
- @media screen and (max-width: 468px){
-    #home {
-        padding: 50px; /* Adjust padding as needed */
-    }
-    .content-left {
-        margin-right: 0; /* Remove right margin */ 
-        margin-left: 0;  /* Remove left margin */
-        align-items: center; /* Center content */
-        text-align: center; /* Center text */
-        margin-top: 60px; /* Adjust margin for spacing */
-
-    }
-
-    .sign-icon {
-        width: 50px; /* Adjust size for smaller screens */
-        margin-bottom: 15px; /* Adjust spacing */
-    }
-
-    .intro-text p {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    #name {
-        font-size: 50px; /* Adjust font size for smaller screens */
-        margin: 15px 0; /* Adjust spacing */
-    }
-
-    .rotating-text {
-        font-size: 32px; /* Adjust font size */
-        transform: translateY(0); /* Adjust position */
-        margin: 20px 0; /* Add margin for spacing */
-    }
-
-    .profile-container {
-        position: static; /* Make it part of the normal flow */
-        margin-top: 55px; /* Adjust spacing */
-        width: 200px; /* Adjust size */
-        height: 200px; /* Adjust size */
-        transform: translateY(0); /* Remove translation */
-        
-    }
-
-    .social-icons {
-        margin-top: 20px; /* Adjust margin for spacing */
-        justify-content: center; /* Center the icons */
-        gap: 15px; /* Adjust gap */
-    }
-
-    .contact-button {
-        margin-top: 20px; /* Adjust spacing */
-        width: 120px; /* Adjust size */
-        height: 34px; /* Adjust size */
-        font-size: 18px; /* Adjust font size */
-        margin-left:210px ;
-    }
- }
-
-
-
-/* Styling for other sections */
-/* Styling for other sections */
-/* Define the keyframes for the pop-up effect */
-/* Keyframes for pop animation */
-@keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+@keyframes glow {
+    0% { left: -50%; }
+    100% { left: 150%; }
 }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+

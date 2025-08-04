@@ -21,8 +21,27 @@ document.addEventListener('DOMContentLoaded', function() {
             lastName.appendChild(span);
         }
     }
-    
 
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved preference or system preference
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+    document.body.classList.add(`${currentTheme}-mode`);
+    
+    themeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-mode')) {
+            document.body.classList.replace('dark-mode', 'light-mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.replace('light-mode', 'dark-mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+
+    
     // Your existing JavaScript
     document.querySelectorAll('#nav-menu li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
