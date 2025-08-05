@@ -1,468 +1,201 @@
+/* Consistent with education section */
 #experience {
-    height: 220vh; /* Extend the height to 600vh */
+    padding: 6rem 2rem 4rem; /* Consistent padding with education */
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+    position: relative; /* Added for absolute positioning context */
+}
+
+.experience-header {
+    position: absolute; /* Matches education header positioning */
+    top: 40px;
+    left: 90px;
+    z-index: 10;
+    margin-bottom: 0; /* Remove previous margin */
+    padding-left: 0; /* Remove previous padding */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.title-underline {
+    height: 4px;
+    width: 120px;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    border-radius: 2px;
+}
+
+/* Dark mode adjustments to match education */
+.dark-mode #experience {
+    background-color: #01052c;
+}
+
+/* Timeline styling (matches education) */
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
-    background-color: #13064af7; /* Background color */
-    
+    padding-top: 60px;
 }
 
-
-.center-line {
+.timeline-line {
     position: absolute;
-    left: 50%;
+    left: 50px;
+    top: 0;
+    bottom: 0;
     width: 4px;
-    background-color: #00FFFF;
-    height: calc(100% - 150px); /* Height to leave space at top and bottom */
-    top: 190px; /* Space at the top of the line */
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
     transform: translateX(-50%);
+    z-index: 1;
 }
 
-.circle {
-    width: 100px; /* Increased size */
-    height: 100px; /* Increased size */
-    border-radius: 50%;
-    position: absolute;
-    left: 46.7%;
-    transform: translateX(-50%);
+/* Experience item cards */
+.timeline-item {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-color: #7b00ff;
-    margin-top: 8%;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
 }
 
-.circle img {
-    width: 100%; /* Adjust to fit the new circle size */
-    height: 100%; /* Adjust to fit the new circle size */
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-circle {
+    min-width: 80px;
+    height: 80px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
-.circle1 { top: 54px; }
-
-.circle5 { top: 44%}
-
-
-.circle1:hover {
-    transform: scale(1.2) translateX(-75px); /* Adjust the translateX value as needed */
-    box-shadow: 0 6px 30px #bb63ff;
+.timeline-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-.circle5:hover {
-    transform: scale(1.2) translateX(-75px); /* Adjust the translateX value as needed */
-    box-shadow: 0 6px 30px #bb63ff;
+/* Content styling */
+.timeline-content h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
 }
 
-
-
-.experience-box {
-    width: 400px; /* Increased width */
-    padding: 30px;
-    background-color: #11083bf7; /* Slightly different color for visibility */
-    color: white;
-    box-shadow: 0px 0px 15px rgba(57, 239, 255, 0.947); /* Added glow effect */
-    border-radius: 10px; /* Rounded corners */
-    position: absolute;
-    margin-top: 100px; /* Move boxes upward */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+.role-duration {
+    font-weight: 600;
+    color: #3498db;
+    margin-bottom: 0.3rem;
 }
 
-.experience-box:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    background-color: #060144; /* Change background color to white */
-    color: #000000; /* Change text color to black for contrast */
-    box-shadow: 0 6px 30px #bb63ff;
+.date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
-.box-content {
-    display: flex;
-    flex-direction: column;
+.accomplishments {
+    padding-left: 1.2rem;
+    margin: 1rem 0;
 }
 
-.company-name {
-    font-size: 1.5em; /* Bigger font */
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ab8bfc;
+.accomplishments li {
+    margin-bottom: 0.8rem;
+    color: #34495e;
+    line-height: 1.5;
 }
 
-.role-duration,
-.dates {
-    font-size: 1em; /* Slightly smaller font compared to company name */
-    margin-bottom: 5px;
-    color: #a07cfb;
-}
-
-.description {
-    margin-bottom: 15px; /* Space before tech stack */
-    margin-top: 14px;
-    color: #89ceff;
-}
-
-.point {
-    margin-bottom: 20px; /* Increased line spacing in box1 */
-}
-
-.tech-stack {
-    font-size: 1.5em; /* Bigger font */
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #a07cfb;
-}
-
-.tech-list {
+/* Tech tags */
+.tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Space between items */
-    color: #f9f8ff;
+    gap: 0.5rem;
+    margin: 1rem 0;
 }
 
-.tech-list span {
-    margin-right: 10px; /* Space between items */
+.tech-tags span {
+    background: #e0e6ff;
+    color: #3a5bff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-/* Positioning for boxes */
-.box1 {
-    left: 12%;
-    top: calc(24px + 100px - 20px); /* Align with circle1 and move upward */
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.box5 {
-    right: 12%;
-    top: 750px; /* Adjusted to align with circle5 */
-}
-
-/* General button styling */
-.certificate-btn,
-.website-btn {
-    background-color: #9b3dff;
+.gradient-btn {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 10px 10px;
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.2s;
 }
 
-/* Glow effect */
-.certificate-btn::before,
-.website-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    transition: all 0.5s ease;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
+.outline-btn {
+    background: transparent;
+    color: #6a11cb;
+    border: 2px solid #6a11cb;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.certificate-btn:hover::before,
-.website-btn:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+/* Dark mode */
+.dark-mode #experience {
+    background-color: #01052c;
 }
 
-/* Hover effect for the buttons */
-.certificate-btn:hover,
-.website-btn:hover {
-    background-color: #7b00ff;
-    box-shadow: 0 0 20px rgb(203, 89, 252);
-    transform: translateY(-2px);
+.dark-mode .timeline-item {
+    background: #0a1235;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
 }
 
-.certificate-btn:active,
-.website-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+.dark-mode .timeline-content h1,
+.dark-mode .accomplishments li {
+    color: #ecf0f1;
 }
 
-/* Experience container styling */
-.experience-container {
-    margin-bottom: 50px; /* Add space between each experience section */
+.dark-mode .tech-tags span {
+    background: #1a237e;
+    color: #bbdefb;
 }
 
-/* Button container styling */
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .button-container {
-        flex-direction: column;
-    }
-
-    .certificate-btn,
-    .website-btn {
-        margin: 10px 0;
-        width: 100%;
-    }
-}
-
-/* Initial state for elements before animation */
-.experience-box {
-    opacity: 0;
-    transform: scale(0.5);
-}
-
-.circle {
-    opacity: 0;
-    transform: scale(0.5);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-/* Animation for circles */
-@keyframes popUp {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Animation for experience boxes */
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* Apply animation only when the class is active */
-.box1.animate,
-
-.box5.animate{
-    opacity: 1;
-    transform: scale(1);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-}
-
-/* Apply animation only when the class is active */
-.circle.animate {
-    animation: popUp 1s ease-out forwards;
-}
-
-.box1.animate,
-
-.box5.animate {
-    animation: slideInLeft 1s ease-out forwards;
-}
-
-
-
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-    .center-line {
-        left: 10%; /* Move the vertical line to the left */
-    }
-
-    .circle {
-        left: 5%; /* Move the circles to the left */
-        transform: none; /* Reset the transform property */
-        margin-top: 110px;
-    }
-
-    .experience-box {
-        left: auto;
-        right: 5%; /* Position the boxes to the right */
-        width: 70%; /* Reduce the width of the boxes */
-        padding: 15px; /* Reduce padding inside the boxes */
-        margin-bottom: 100px; /* Space between each box */
-
-    }
-
-    /* Adjust font sizes inside the boxes */
-    .company-name {
-        font-size: 1.2em; /* Reduce the font size */
-    }
-
-    .role-duration,
-    .dates {
-        font-size: 0.9em; /* Reduce the font size */
-    }
-
-    .description {
-        font-size: 0.9em; /* Reduce the font size */
-    }
-
-    .tech-stack {
-        font-size: 1.2em; /* Reduce the font size */
-    }
-
-    .tech-list {
-        font-size: 0.9em; /* Reduce the font size of tech list items */
-    }
-
-    /* Aligning boxes with circles */
-    .box1 { top: calc(24px + 270px - 20px); }
-
-    .box5 { top: 320px }
-
-
-    /* Adjust button containers */
-    .button-container {
-        flex-direction: column;
-        align-items: flex-start; /* Align buttons to the start */
-    }
-
-    .certificate-btn,
-    .website-btn {
-        margin: 10px 0;
-        width: 100%;
-    }
-    #experience {
-    height: 230vh; /* Extend the height to 600vh */
-    position: relative;
-    
-    
-}
-    
-}
-
-/* Media query for phone screens */
-@media screen and (max-width: 480px) {
-    
-    .experience-box {
-        width: 75%; /* Set width to ensure the box fits within the screen */
-        margin: 6px auto; /* Increase margin to create more space between boxes */
-        padding: 10px; /* Adjust padding for content spacing inside the box */
-        font-size: 14px; /* Maintain smaller font size for readability */
-        box-sizing: border-box; /* Ensure padding and border are included in the width */
-    }
-
-   
-    .experience-box.box5 {
-        width: 75%; /* Set width to ensure the box fits within the screen */
-        margin: 810px auto; /* Increase margin to create more space between boxes */
-        padding: 10px; /* Adjust padding for content spacing inside the box */
-        font-size: 14px; /* Maintain smaller font size for readability */
-        box-sizing: border-box; /* Ensure padding and border are included in the width */
-        
-    }
-
-    .circle5 {
-        margin-top: 200px;
-    }
-
-
-
-    .container {
-        padding: 10px; /* Adjust container padding if necessary */
-    }
-
-    h1 {
-        font-size: 24px; /* Adjust header size */
-    }
-
-    p {
-        font-size: 12px; /* Adjust paragraph size */
-    }
-
-    /* Extend height of the experience section */
-    .experience-section {
-    min-height: 2000vh; /* Enough height to contain all boxes */
-    padding-bottom: 200px;
-    position: relative; /* Important to position children correctly */
-    overflow: visible;  /* Make sure no content is cut off */
-}
-
-
-}
-
-
-
-/* Experience Section with Animation */
 #experience {
-    padding: 40px 20px;
-    background-color: #13064af7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+    padding: 4rem 1.5rem;
+    position: relative; /* Needed if using absolute positioning */
 }
 
-/* Animated Header */
-#experience h2.experience-heading {
-    color: #fff;
-    font-size: 2.8rem;
-    text-align: center;
-    margin: 0 auto 60px;
-    padding: 0 20px 20px;
-    position: relative;
-    opacity: 0;
+.experience-header {
+    padding-left: 1rem;
+    text-align: left; /* Keeps text left-aligned */
 }
 
-/* Text slides from left */
-#experience h2.experience-heading .heading-text {
-    display: inline-block;
-    transform: translateX(-100px);
-    transition: all 0.3s ease-out;
-}
-
-/* Underline slides from right */
-#experience h2.experience-heading .underline {
-    position: absolute;
-    bottom: 0;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #9d00ff, #60eaff);
-    border-radius: 2px;
-    transform: translateX(100px);
-    transition: all 0.3s ease-out;
-    left: calc(50% - 50px); /* Center position */
-}
-
-/* Animated state */
-#experience h2.experience-heading.animate {
-    opacity: 1;
-}
-
-#experience h2.experience-heading.animate .heading-text,
-#experience h2.experience-heading.animate .underline {
-    transform: translateX(0);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    #experience h2.experience-heading {
-        font-size: 2.2rem;
-        margin-bottom: 40px;
-    }
-    
-    #experience h2.experience-heading .underline {
-        width: 80px;
-        left: calc(50% - 40px);
-    }
-}
-
-@media (max-width: 480px) {
-    #experience h2.experience-heading {
-        font-size: 2rem;
-    }
+/* Option 1: Auto Margin (Best for simple centering) */
+.title-underline {
+    width: 80px;
+    margin: 0.5rem 0 0 1rem; /* Matches experience-header padding */
+    height: 2px; /* Adjust thickness */
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
 }

@@ -1,36 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const leftBox = document.querySelector('.left-box');
-    const rightBox = document.querySelector('.right-box');
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme change handler for education section
+    function updateEducationTheme() {
+        const educationSection = document.getElementById('education');
+        if (document.body.classList.contains('dark-mode')) {
+            educationSection.style.backgroundColor = '#0a041a';
+        } else {
+            educationSection.style.backgroundColor = '#ffffffff';
+        }
+    }
 
-    const isMobile = window.innerWidth <= 768;
+    // Initial theme check
+    updateEducationTheme();
 
-    // LEFT BOX OBSERVER - trigger earlier
-    const observerLeft = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                leftBox.classList.add('animate-left');
-                observer.unobserve(entry.target);
+    // Observe theme changes
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+                updateEducationTheme();
             }
         });
-    }, {
-        threshold: 0, // Trigger as soon as any part is visible
-        rootMargin: isMobile ? '0px 0px -150px 0px' : '-100px 0px -100px 0px' // Negative bottom margin to trigger earlier
     });
 
-    observerLeft.observe(leftBox);
+    // Start observing the body for class changes
+    observer.observe(document.body, {
+        attributes: true
+    });
 
-    // RIGHT BOX OBSERVER - trigger earlier
-    const observerRight = new IntersectionObserver((entries, observer) => {
+    // Animation for timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const itemObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                rightBox.classList.add('animate-right');
-                observer.unobserve(entry.target);
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, {
-        threshold: 0, // Trigger as soon as any part is visible
-        rootMargin: isMobile ? '0px 0px -150px 0px' : '-100px 0px -100px 0px' // Negative bottom margin to trigger earlier
-    });
+    }, observerOptions);
 
-    observerRight.observe(rightBox);
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.6s ease-out';
+        itemObserver.observe(item);
+    });
 });

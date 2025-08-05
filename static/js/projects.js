@@ -1,87 +1,119 @@
-let currentProject = 1;
-const totalProjects = 4; // Update this number to match your total projects
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.carousel-container');
+    const cards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.carousel-nav.prev');
+    const nextBtn = document.querySelector('.carousel-nav.next');
+    const dotsContainer = document.querySelector('.pagination-dots');
+    let currentIndex = 0;
+    const cardCount = cards.length;
 
-function updateProjectDisplay() {
-    // Hide all projects
-    for (let i = 1; i <= totalProjects; i++) {
-        const project = document.getElementById(`project-${i}`);
-        if (project) {
-            project.style.display = 'none';
+    // Initialize dots based on screen size
+    function initializeDots() {
+        dotsContainer.innerHTML = '';
+        const dotCount = window.innerWidth <= 767 ? cardCount : Math.ceil(cardCount / 2);
+        
+        for (let i = 0; i < dotCount; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => {
+                currentIndex = i * (window.innerWidth <= 767 ? 1 : 2);
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        }
+        updateDots();
+    }
+
+    // Update carousel position
+    function updateCarousel() {
+        const cardsPerView = getCardsPerView();
+        const cardWidth = cards[0].offsetWidth + 32;
+        const translateX = -currentIndex * cardWidth;
+        
+        carousel.style.transform = `translateX(${translateX}px)`;
+        carousel.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        
+        updateNavButtons();
+        updateDots();
+    }
+
+    // Update navigation buttons visibility
+    function updateNavButtons() {
+        const cardsPerView = getCardsPerView();
+        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextBtn.style.display = currentIndex >= cardCount - cardsPerView ? 'none' : 'block';
+    }
+
+    // Update active dot
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        const activeDotIndex = window.innerWidth <= 767 ? currentIndex : Math.floor(currentIndex / 2);
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeDotIndex);
+        });
+    }
+
+    // Get number of visible cards
+    function getCardsPerView() {
+        if (window.innerWidth <= 767) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    // Navigation handlers
+    function goNext() {
+        const cardsPerView = getCardsPerView();
+        if (currentIndex < cardCount - cardsPerView) {
+            currentIndex += cardsPerView;
+            updateCarousel();
         }
     }
 
-    // Show current project
-    const current = document.getElementById(`project-${currentProject}`);
-    if (current) {
-        current.style.display = 'flex';
-    }
-
-    // Update nav button visibility
-    const prevBtn = document.getElementById('prev-project');
-    const nextBtn = document.getElementById('next-project');
-
-    if (prevBtn && nextBtn) {
-        prevBtn.style.visibility = currentProject > 1 ? 'visible' : 'hidden';
-        nextBtn.style.visibility = currentProject < totalProjects ? 'visible' : 'hidden';
-    }
-}
-
-// Add event listeners
-document.getElementById('prev-project').addEventListener('click', () => {
-    if (currentProject > 1) {
-        currentProject--;
-        updateProjectDisplay();
-    }
-});
-
-document.getElementById('next-project').addEventListener('click', () => {
-    if (currentProject < totalProjects) {
-        currentProject++;
-        updateProjectDisplay();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    updateProjectDisplay(); // Set initial state
-
-    // Intersection animation observer
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    document.querySelectorAll('.project-container').forEach(container => {
-        observer.observe(container);
-    });
-
-    // Menu close on link click
-    const links = document.querySelectorAll('nav ul li a');
-    const menu = document.getElementById('nav-menu');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('show');
-        });
-    });
-});
-
-
-// Add to your existing IntersectionObserver code
-const projectsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelector('.projects-heading').classList.add('animate');
+    function goPrev() {
+        const cardsPerView = getCardsPerView();
+        if (currentIndex > 0) {
+            currentIndex -= cardsPerView;
+            updateCarousel();
         }
-    });
-}, { threshold: 0.3 });
+    }
 
-projectsObserver.observe(document.querySelector('#projects'));
+    // Button event listeners
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        const cardsPerView = getCardsPerView();
+        if (currentIndex > cardCount - cardsPerView) {
+            currentIndex = Math.max(0, cardCount - cardsPerView);
+        }
+        initializeDots();
+        updateCarousel();
+    });
+
+    // Tech stack animations
+    const techItems = document.querySelectorAll('.tech-item');
+    techItems.forEach(item => {
+        // Floating animation
+        item.style.animation = 'float 3s ease-in-out infinite';
+        
+        // Hover effects
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'translateY(-5px) scale(1.05)';
+            item.style.boxShadow = '0 8px 20px rgba(58, 91, 255, 0.3)';
+            item.style.animation = 'none';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'translateY(0) scale(1)';
+            item.style.boxShadow = 'none';
+            item.style.animation = 'float 3s ease-in-out infinite';
+        });
+    });
+
+    // Initialize
+    initializeDots();
+    updateCarousel();
+});

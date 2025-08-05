@@ -1,71 +1,108 @@
-<!-- templates/project.html -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-projects.css') }}">
 
-<div id="projects">
-    <h2 class="projects-heading">
-        <span class="heading-text">My Projects</span>
-        <span class="underline"></span>
-    </h2>
-    <button class="nav-button" id="prev-project">&lt;</button>
-
-    <!-- Project 1 -->
-    <div class="project-container" id="project-1">
-        <div class="project-image">
-            <img src="https://i.ibb.co/nq2cYZh/mav.jpg" alt="Dr. Mav Project Image">
-        </div>
-        <div class="project-details">
-            <div class="project-title">Dr. Mav</div>
-            <div class="project-subtitle">Vital Sign Monitoring Rover</div>
-            <div class="project-description">
-                A hospital rover, remotely controlled via joystick or web, allows doctors to observe patients and access vital signs through a dashboard. It features UV sterilization, contactless heart rate and temperature measurement, and stores all data for emergency response.
-            </div>
-        </div>
+<section id="projects">
+    <div class="projects-header">
+        <h1 class="section-title">My Projects</h1>
+        <div class="title-underline"></div>
     </div>
 
-    <!-- Project 2 -->
-    <div class="project-container" id="project-2" style="display: none;">
-        <div class="project-image">
-            <img src="https://i.ibb.co/qMcSz08k/Picsart-25-02-11-19-42-37-522.jpg" alt="Automatic Drug Dispenser">
-        </div>
-        <div class="project-details">
-            <div class="project-title">Automatic Drug Dispesner</div>
-            <div class="project-subtitle">Medicine dispesning through vending machine from QRcode based prescription</div>
-            <div class="project-description">
-                Developed an automated medication management system using QR codes for digitized prescriptions, ensuring sorted doses and a user-friendly interface. Integrated a Power Pi for tracking patient entries and analyzing common illness spread. Added real-time tracking and an OTC module for seamless non-prescription tablet purchases, enhancing healthcare efficiency and safety.
+    <div class="projects-carousel">
+        <button class="carousel-nav prev" aria-label="Previous project">&lt;</button>
+        
+        <div class="carousel-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://i.ibb.co/nq2cYZh/mav.jpg" alt="Dr. Mav Project">
+                    <div class="project-dates">Aug 2023 - Feb 2024</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Dr. Mav</h3>
+                    <h4 class="project-subtitle">Vital Sign Monitoring Rover</h4>
+                    <p class="project-description">
+                        A hospital rover remotely controlled via joystick or web, allowing doctors to observe patients and access vital signs through a dashboard.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">IoT</span>
+                        <span class="tech-item">Frontend</span>
+                        <span class="tech-item">ESP32</span>
+                        <span class="tech-item">FFT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://i.ibb.co/qMcSz08k/Picsart-25-02-11-19-42-37-522.jpg" alt="Drug Dispenser">
+                    <div class="project-dates">Dec 2024 - Jan 2025</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Automatic Drug Dispenser</h3>
+                    <h4 class="project-subtitle">QR-code Based Prescription System</h4>
+                    <p class="project-description">
+                        Automated medication management system using QR codes for digitized prescriptions with real-time tracking.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">IoT</span>
+                        <span class="tech-item">Web Dev</span>
+                        <span class="tech-item">Flask</span>
+                        <span class="tech-item">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://i.ibb.co/s6vwpFz/car.png" alt="AutoMan Car">
+                    <div class="project-dates">Apr 2022 - May 2022</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AutoMan Car</h3>
+                    <h4 class="project-subtitle">Mobile App Controlled Vehicle</h4>
+                    <p class="project-description">
+                        Combines obstacle avoidance and mobile operation using MIT App Inventor and Arduino.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">MIT App</span>
+                        <span class="tech-item">Sensors</span>
+                        <span class="tech-item">Drivers</span>
+                        <span class="tech-item">Arduino</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://i.ibb.co/6RJQ1vG/portfolio-screenshot.jpg" alt="Personal Portfolio">
+                    <div class="project-dates">Oct 2023 - Present</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Personal Portfolio</h3>
+                    <h4 class="project-subtitle">Professional Showcase</h4>
+                    <p class="project-description">
+                        Responsive portfolio website showcasing my projects and skills with dark/light mode.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">HTML</span>
+                        <span class="tech-item">CSS</span>
+                        <span class="tech-item">JavaScript</span>
+                        <span class="tech-item">Flask</span>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <button class="carousel-nav next" aria-label="Next project">&gt;</button>
     </div>
 
-    <!-- Project 3 -->
-    <div class="project-container" id="project-3" style="display: none;">
-        <div class="project-image">
-            <img src="https://i.ibb.co/s6vwpFz/car.png" alt="Mobile Operated Car">
-        </div>
-        <div class="project-details">
-            <div class="project-title">Mobile Operated Car</div>
-            <div class="project-subtitle">Mobile Operated Vehicle using App</div>
-            <div class="project-description">
-                We developed a mobile app-controlled vehicle using an Arduino microcontroller to manage motor control and navigation. The Arduino interprets commands from the app, enabling precise forward, backward, left, and right movements. This project offers a hands-on introduction to IoT and robotics, blending software and hardware for an educational and fun experience—like having your own robot car at your command!
-            </div>
-        </div>
+    <!-- Pagination Dots -->
+    <div class="pagination-dots">
+        <!-- Will be populated by JavaScript -->
     </div>
-
-    <!-- Project 4 -->
-    <div class="project-container" id="project-4" style="display: none;">
-        <div class="project-image">
-            <img src="https://i.ibb.co/MZHgC6w/Screenshot-2024-08-10-122433.png" alt="Obstacle Avoidance Robot">
-        </div>
-        <div class="project-details">
-            <div class="project-title">Obstacle Avoidance Robot</div>
-            <div class="project-subtitle">Ultrasonic used Obstacle Avoidance Robot</div>
-            <div class="project-description">
-                Our obstacle avoidance vehicle project uses Arduino and a motor driver to build a smart system capable of navigating its environment by detecting and avoiding obstacles. This versatile solution highlights the practical application of innovative technologies in real-world scenarios.
-            </div>
-        </div>
-    </div>
-
-    <button class="nav-button" id="next-project">&gt;</button>
-</div>
+</section>
 
 <script src="{{ url_for('static', filename='js/projects.js') }}"></script>

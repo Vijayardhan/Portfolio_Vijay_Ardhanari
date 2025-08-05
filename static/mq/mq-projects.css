@@ -1,0 +1,162 @@
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .project-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    
+    .projects-carousel {
+        padding: 0 2rem;
+    }
+    
+    .carousel-nav.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav.next {
+        right: 10px;
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    #projects {
+        padding: 3rem 1rem 2rem;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .projects-header {
+         position: absolute;
+        top: 10px; /* Distance from the top of #skills */
+        left: 0; /* Start from the left edge */
+        right: 0; /* Stretch to the right edge */
+        text-align: center; /* Center the text horizontally */
+        margin: 0 auto; /* Auto margins help in centering */
+        width: 100%; /* Take full width to allow proper centering */
+        padding: 0 1.5rem; /* Optional: Add padding to prevent edge sticking */
+        padding: 2.5rem 3rem 1.5rem; /* ✅ Clean and balanced spacing */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .title-underline {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .projects-carousel {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        overflow: visible;
+        padding-top: 4.5rem; /* ✅ Adjusted to avoid excess spacing */
+    }
+
+    .carousel-container {
+        display: flex;
+        width: 100%;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .project-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        will-change: transform;
+        margin-bottom: 1rem;
+    }
+
+    .project-image {
+        height: 35vh;
+        min-height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 0 auto;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .project-content {
+        padding: 1.5rem 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel-nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .carousel-nav.prev {
+        left: 0.5rem;
+    }
+
+    .carousel-nav.next {
+        right: 0.5rem;
+    }
+
+    .pagination-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: -0.1rem 0;
+        padding: 0 1rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ddd;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background: #6a11cb;
+        transform: scale(1.3);
+    }
+}
+
+
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    #projects {
+        padding: 2.5rem 1rem 1.5rem; /* Slightly tighter padding */
+    }
+
+    .section-title {
+        font-size: 1.8rem; /* Smaller font for very small screens */
+    }
+
+    .project-image {
+        height: 30vh;
+        min-height: 180px;
+    }
+
+    .carousel-nav {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}

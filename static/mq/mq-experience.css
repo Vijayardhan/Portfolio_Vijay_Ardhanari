@@ -1,0 +1,92 @@
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    #experience {
+        padding: 4rem 1.5rem;
+    }
+
+    .experience-header {
+        padding-left: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .timeline-circle {
+        width: 70px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .timeline-line {
+        left: 35px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .gradient-btn, .outline-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    #experience {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    
+
+
+    .title-underline {
+        width: 80px;
+    }
+
+    .timeline-item {
+        padding: 1.2rem;
+    }
+
+    .timeline-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .role-duration, .date {
+        font-size: 0.9rem;
+    }
+
+    .accomplishments li {
+        font-size: 0.9rem;
+    }
+
+    .tech-tags span {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
+
+/* Small Mobile (360px) */
+@media (max-width: 360px) {
+    .timeline-line {
+        left: 25px;
+        width: 3px;
+    }
+
+    .timeline-circle {
+        width: 60px;
+        height: 70px;
+    }
+}

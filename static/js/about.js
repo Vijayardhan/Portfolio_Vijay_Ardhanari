@@ -1,33 +1,35 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme change handler
+    function updateAboutTheme() {
+        const aboutSection = document.getElementById('about');
+        if (document.body.classList.contains('dark-mode')) {
+            aboutSection.style.backgroundColor = '#01052cff';
+        } else {
+            aboutSection.style.backgroundColor = '#ffffffdc';
+        }
+    }
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    // Initialize theme
+    updateAboutTheme();
+    
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', updateAboutTheme);
+    }
+
+    // Animation on scroll
+    const aboutElements = document.querySelectorAll(
+        '#about .profile-circle-1, #about .about-text-container, #about .resume-button-container'
+    );
+    
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
             }
         });
-    }, options);
+    }, { threshold: 0.1 });
 
-    const aboutSection = document.querySelector('#about .about-container');
-    if (aboutSection) {
-        observer.observe(aboutSection);
-    }
+    aboutElements.forEach(el => observer.observe(el));
 });
-
-
-// Add this to your existing observer code
-const aboutObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelector('.about-heading').classList.add('animate');
-        }
-    });
-}, { threshold: 0.3 });
-
-aboutObserver.observe(document.querySelector('#about'));

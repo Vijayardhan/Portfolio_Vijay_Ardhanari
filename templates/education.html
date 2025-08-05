@@ -2,50 +2,77 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-education.css') }}">
 
 <section id="education">
-    <div class="vertical-line">
-        <div class="circle top-circle" style="background-image: url('https://i.ibb.co/1Rh3XwG/Untitled-design-7.png');"></div>
-        <div class="circle bottom-circle" style="background-image: url('https://i.ibb.co/tDyRPTb/AKT.jpg');"></div>
+    <div class="education-header">
+        <h1 class="section-title">Education</h1>
+        <div class="title-underline"></div>
     </div>
+    
+    <div class="education-container">
+        <!-- Timeline line -->
+        <!-- <div class="timeline-line"></div> -->
+        
+        <!-- Timeline items -->
+        <div class="timeline-items">
+            <!-- Future PG (First item) -->
+            <div class="timeline-item future">
+                <div class="timeline-circle">
+                    <img src="https://i.ibb.co/SzPGR5b/THA-300x300-scaled-e1702894949674.jpg" alt="Technical University of Augsburg">
+                </div>
+                <div class="timeline-content">
+                    <h1>Technical University of Augsburg</h1>
+                    <p class="location">Germany, Bavaria, Augsburg</p>
+                    <p class="specialization">Electrical Engineering (Masters)</p>
+                    <p class="date">Starting October 1st, 2025</p>
+                    <div class="future-badge">Upcoming</div>
+                </div>
+            </div>
+            
+            <!-- Velammal College (Second item) -->
+            <div class="timeline-item">
+                <div class="timeline-circle">
+                    <img src="https://i.ibb.co/1Rh3XwG/Untitled-design-7.png" alt="Velammal Engineering College">
+                </div>
+                <div class="timeline-content">
+                    <h1>Velammal Engineering College</h1>
+                    <p class="specialization">Electronics and Communication Engineering</p>
+                    <p class="date">2021 - 2025 | CGPA - 8.15</p>
+                    
+                    <div class="details">
+                        <h2>Volunteer Roles:</h2>
+                        <h3>Youth Red Cross - (2022-2024)</h3>
+                        <p>Joint Secretary (22–23): Coordinated and led various humanitarian initiatives.</p>
+                        <p>Treasurer (23–24): Managed financial operations and budgeting for the organization.</p>
 
+                        <h2>Organization:</h2>
+                        <p>Student Member, IETE (Institution of Electronics and Telecommunication Engineers)</p>
 
-    <div class="mobile-wrapper">
-    <div class="left-box">
-        <div class="content">
-            <h1>Velammal Engineering College</h1>
-            <p class="specialization">Electronics and Communication Engineering</p>
-            <p class="cgpa">Graduation - 2025    |    CGPA - 8.04</p>
+                        <h2>Sports:</h2>
+                        <p>College Basketball Player</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AKT School (Third item) -->
+            <div class="timeline-item">
+                <div class="timeline-circle">
+                    <img src="https://i.ibb.co/tDyRPTb/AKT.jpg" alt="AKT Matriculation School">
+                </div>
+                <div class="timeline-content">
+                    <h1>AKT Matriculation Hr. Sec. School</h1>
+                    <p class="specialization">Computer Science Group in HSC</p>
+                    <p class="date">Percentage: 90.76%</p>
+                    
+                    <div class="details">
+                        <h2>HSE Subjects:</h2>
+                        <p>Maths, Physics, Chemistry, Computer Science, English, and Tamil.</p>
 
-            <div class="spacer"></div>
-
-            <h2>Volunteer Roles:</h2>
-            <h3>Youth Red Cross - (2022-Present)</h3>
-            <p>Joint Secretary (22–23): Coordinated and led various humanitarian initiatives.</p>
-            <p>Treasurer (23–24): Managed financial operations and budgeting for the organization.</p>
-
-            <h2>Organization:</h2>
-            <p>Student Member, IETE (Institution of Electronics and Telecommunication Engineers)</p>
-
-            <h2>Sports:</h2>
-            <p>College Basketball Player</p>
+                        <h2>Activities:</h2>
+                        <p>State Moving Train Drawing Competition Winner, Drawing Class Lead.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="right-box">
-        <div class="content">
-            <h1>AKT Matriculation Hr. Sec. School</h1>
-            <p class="specialization">Computer Science Group in HSC</p>
-            <p class="percentage">Percentage: 90.76%</p>
-
-            <div class="spacer"></div>
-
-            <h2>HSE Subjects:</h2>
-            <p>Maths, Physics, Chemistry, Computer Science, English, and Tamil.</p>
-
-            <h2>Activities:</h2>
-            <p>State Moving Train Drawing Competition Winner, Drawing Class Lead.</p>
-        </div>
-    </div>
-</div>
 </section>
 
 <script src="{{ url_for('static', filename='js/education.js') }}"></script>

@@ -1,74 +1,115 @@
-<!-- templates/skills.html -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-skills.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-skills.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body>
+    <section id="skills">
+        <div class="skills-header">
+            <h1 class="section-title">My Skills</h1>
+            <div class="title-underline"></div>
+        </div>
 
-<section id="skills">
-    <h2 class="skills-heading">
-    <span class="heading-text">My Skills</span>
-    <span class="underline"></span>
-</h2>
-    <div class="skills-container">
-        <div class="skill-box">
-            <img src="https://i.ibb.co/6HJbsGV/iot.png" alt="IoT">
-            <p>IoT</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/TYpt4LC/microchip.png" alt="Microcontrollers">
-            <p>Micro controllers</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/4TGCHxm/system-integration.png" alt="Automation">
-            <p>Automation</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/HDHTRkFL/electricity.png" alt="DBMS">
-            <p>Electrical testing</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/8Drx1Lb/python.png" alt="Python">
-            <p>Python</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/pvLmD8N/letter-c.png" alt="C">
-            <p>C</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/rcgM2SK/html-5.png" alt="HTML">
-            <p>HTML</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/V2mqt9f/css1.png" alt="CSS">
-            <p>CSS</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/6gycwxx/javascript.png" alt="JavaScript">
-            <p>JavaScript</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/F4ZhTkS/physics.png" alt="React">
-            <p>React</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/cNHwJXB/pngegg.png" alt="Flask">
-            <p>Flask</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/54KY7yj/fire1-removebg-preview.png" alt="Firebase">
-            <p>Firebase</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/MDGJHrB/can.png" alt="Canva">
-            <p>Canva</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/zJw3qt4/office365.png" alt="Excel">
-            <p>Excel</p>
-        </div>
-        <div class="skill-box">
-            <img src="https://i.ibb.co/hd3SpC6/office.png" alt="PowerPoint">
-            <p>PowerPoint</p>
-        </div>
-    </div>
-</section>
+        <div class="skills-columns-container">
+            <!-- Tech & Tools Column -->
+            <div class="skills-column tech-column">
+                <h2 class="column-title">Tech & Tools</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/6HJbsGV/iot.png" alt="IoT">
+                        </div>
+                        <span class="skill-name">IoT</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/TYpt4LC/microchip.png" alt="Microcontrollers">
+                        </div>
+                        <span class="skill-name">Microcontrollers</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/4TGCHxm/system-integration.png" alt="Automation">
+                        </div>
+                        <span class="skill-name">Automation</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/HDHTRkFL/electricity.png" alt="Electrical Testing">
+                        </div>
+                        <span class="skill-name">Electrical Testing</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/8Drx1Lb/python.png" alt="Python">
+                        </div>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/pvLmD8N/letter-c.png" alt="C">
+                        </div>
+                        <span class="skill-name">C</span>
+                    </div>
+                </div>
+            </div>
 
-<script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+            <!-- Others & Hobbies Column -->
+            <div class="skills-column hobbies-column">
+                <h2 class="column-title">Others & Hobbies</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/rcgM2SK/html-5.png" alt="HTML">
+                        </div>
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/V2mqt9f/css1.png" alt="CSS">
+                        </div>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/6gycwxx/javascript.png" alt="JavaScript">
+                        </div>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/cNHwJXB/pngegg.png" alt="Flask">
+                        </div>
+                        <span class="skill-name">Flask</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/MDGJHrB/can.png" alt="Canva">
+                        </div>
+                        <span class="skill-name">Canva</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/zJw3qt4/office365.png" alt="Excel">
+                        </div>
+                        <span class="skill-name">Excel</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img src="https://i.ibb.co/hd3SpC6/office.png" alt="PowerPoint">
+                        </div>
+                        <span class="skill-name">PowerPoint</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+</body>
+</html>

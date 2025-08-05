@@ -1,0 +1,78 @@
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .education-header {
+        padding-left: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .timeline-circle {
+        width: 80px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    
+    .timeline-line {
+        left: 40px;
+    }
+    
+    .timeline-content h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .timeline-content .location,
+    .timeline-content .specialization,
+    .timeline-content .date {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #education {
+        padding: 2rem 1rem;
+    }
+
+    .education-header {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .title-underline {
+        width: 80px;
+        margin: -2px auto 0;
+        margin-bottom: auto
+    }
+    
+    .timeline-item {
+        padding: 1.5rem;
+    }
+    
+    .timeline-line {
+        left: 20px;
+        width: 3px;
+    }
+    
+    .timeline-content h1 {
+        font-size: 1.3rem;
+    }
+    
+    .details h2 {
+        font-size: 1.1rem;
+    }
+    
+    .details h3 {
+        font-size: 1rem;
+    }
+}

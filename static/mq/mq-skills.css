@@ -1,0 +1,102 @@
+@media (max-width: 992px) {
+    .skills-header {
+        position: absolute;
+        top: 30px;  /* Reduced from 40px to move it up */
+        left: 30px;  /* Reduced from 50px to move it left */
+    }
+    
+    .skills-columns-container {
+        gap: 2rem;
+        margin-top: 5rem;  /* Added to compensate for absolute header */
+    }
+}
+
+@media (max-width: 768px) {
+    #skills {
+        padding: 5rem 1.5rem 3rem;
+        position: relative; /* Needed for absolute positioning inside */
+    }
+    
+    .skills-header {
+        position: absolute;
+        top: 20px; /* Distance from the top of #skills */
+        left: 0; /* Start from the left edge */
+        right: 0; /* Stretch to the right edge */
+        text-align: center; /* Center the text horizontally */
+        margin: 0 auto; /* Auto margins help in centering */
+        width: 100%; /* Take full width to allow proper centering */
+        padding: 0 1.5rem; /* Optional: Add padding to prevent edge sticking */
+        padding-top: 30px;
+    }
+    
+    .title-underline {
+        margin: 0;  /* Removed auto margin */
+    }
+    
+    .skills-columns-container {
+        flex-direction: column;
+        margin-top: 4rem;  /* Adjusted for absolute header */
+        gap: 2rem;
+        margin-left: -10px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .column-title {
+        font-size: 1.6rem;
+    }
+    .skill-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-header {
+        top: 15px;
+        left: 15px;
+        
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .title-underline {
+        width: 100px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .skills-header {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .skills-grid {
+        gap: 1rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .skill-name {
+        font-size: 0.9rem;
+    }
+}
