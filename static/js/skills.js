@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.body.classList.contains('dark-mode')) {
             skillsSection.style.backgroundColor = '#01052c';
         } else {
-            skillsSection.style.backgroundColor = '#f8f9fa';
+            skillsSection.style.backgroundColor = '#ffffffed';
         }
     }
     updateSkillsTheme();

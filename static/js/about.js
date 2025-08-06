@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (document.body.classList.contains('dark-mode')) {
             aboutSection.style.backgroundColor = '#01052cff';
         } else {
-            aboutSection.style.backgroundColor = '#ffffffdc';
+            aboutSection.style.backgroundColor = '#ffffffed';
         }
     }
 

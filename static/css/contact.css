@@ -207,3 +207,107 @@ footer p {
         width: 40px !important;
     }
 }
+
+
+/* Light Theme */
+#contact {
+    background-color: #f8f9fa;
+}
+
+.custom-container {
+    border: 3px solid #007bff;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+}
+
+.custom-container h2 {
+    color: #0056b3;
+}
+
+.custom-form-group label {
+    color: #495057;
+}
+
+.custom-form-group input,
+.custom-form-group textarea {
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+}
+
+.custom-cont button {
+    border: 4px solid #007bff;
+    background: #fff;
+}
+
+.custom-cont button > span {
+    color: #007bff;
+}
+
+.custom-cont button:hover {
+    background-color: #e9ecef;
+}
+
+.custom-cont button.sent {
+    background: #007bff;
+}
+
+footer {
+    background-color: #e9ecef;
+    border-top: 1px solid #dee2e6;
+}
+
+footer p {
+    color: #212529;
+}
+
+/* Dark Theme */
+.dark-mode #contact {
+    background-color: #070134;
+}
+
+.dark-mode .custom-container {
+    border: 3px solid #67e8ff;
+    background-color: #070134;
+    box-shadow: 0 4px 8px rgb(129, 254, 254);
+}
+
+.dark-mode .custom-container h2 {
+    color: #7b15f6;
+}
+
+.dark-mode .custom-form-group label {
+    color: #ce5bff;
+}
+
+.dark-mode .custom-form-group input,
+.dark-mode .custom-form-group textarea {
+    border: 1px solid #495057;
+    background-color: #13064a;
+    color: #ffffff;
+}
+
+.dark-mode .custom-cont button {
+    border: 4px solid #9113ff;
+    background: #070134;
+}
+
+.dark-mode .custom-cont button > span {
+    color: #9113ff;
+}
+
+.dark-mode .custom-cont button:hover {
+    background-color: #13064a;
+}
+
+.dark-mode .custom-cont button.sent {
+    background: #9113ff;
+}
+
+.dark-mode footer {
+    background-color: #000333;
+    border-top: 1px solid #495057;
+}
+
+.dark-mode footer p {
+    color: #ffffff;
+}

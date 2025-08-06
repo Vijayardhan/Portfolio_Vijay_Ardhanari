@@ -207,3 +207,124 @@
         font-size: 2rem;
     }
 }
+
+
+/* Light Theme */
+#achievements {
+    background-color: #ffffff;
+}
+
+.certification-container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+    border-color: #007bff;
+}
+
+.certification-title {
+    color: #212529;
+}
+
+.certification-image {
+    border-color: #007bff;
+}
+
+.certification-container:hover {
+    box-shadow: 0 6px 30px rgba(0, 123, 255, 0.3);
+}
+
+.certification-container:hover .certification-image {
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.certification-subtitle {
+    color: #007bff;
+}
+
+.certification-date {
+    color: #17a2b8;
+}
+
+.certification-organization {
+    color: #0d6efd;
+}
+
+.certification-description {
+    color: #495057;
+}
+
+#achievements h2.achievements-heading {
+    color: #212529;
+}
+
+#achievements h2.achievements-heading .underline {
+    background: linear-gradient(90deg, #007bff, #00b4ff);
+}
+
+.certificate-button {
+    background-color: #007bff;
+}
+
+.certificate-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 30px rgba(0, 123, 255, 0.3);
+}
+
+/* Dark Theme */
+.dark-mode #achievements {
+    background-color: #0a041a;
+}
+
+.dark-mode .certification-container {
+    background-color: #11083bf7;
+    box-shadow: 0 4px 8px rgb(129, 254, 254);
+    border-color: #68deff;
+}
+
+.dark-mode .certification-title {
+    color: #ffffff;
+}
+
+.dark-mode .certification-image {
+    border-color: #60eaff;
+}
+
+.dark-mode .certification-container:hover {
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.dark-mode .certification-container:hover .certification-image {
+    box-shadow: 0 6px 20px #bb63ff;
+}
+
+.dark-mode .certification-subtitle {
+    color: #a717fb;
+}
+
+.dark-mode .certification-date {
+    color: #8f0ac4;
+}
+
+.dark-mode .certification-organization {
+    color: #7d0fb8;
+}
+
+.dark-mode .certification-description {
+    color: #65b5ff;
+}
+
+.dark-mode #achievements h2.achievements-heading {
+    color: #fff;
+}
+
+.dark-mode #achievements h2.achievements-heading .underline {
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+}
+
+.dark-mode .certificate-button {
+    background-color: #9d00ff;
+}
+
+.dark-mode .certificate-button:hover {
+    background-color: #6b04a2;
+    box-shadow: 0 6px 30px #b667f8;
+}

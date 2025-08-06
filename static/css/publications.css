@@ -1,278 +1,186 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
+    --text-color: #1e293b;
+    --text-secondary: #475569;
+    --card-bg: #ffffff;
+    --section-bg-light: #ffffffdc;
+    --section-bg-dark: #01052cff;
+    --primary-gradient: linear-gradient(90deg, #2563eb, #7c3aed);
+}
+
+/* Base Styles */
 #publications {
+    padding: 6rem 2rem 3rem;
+    position: relative;
+    transition: all 0.5s ease;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.publications-header {
+    position: absolute;
+    top: 40px;
+    left: 90px;
+    z-index: 10;
+}
+
+.publications-heading {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    color: var(--text-color);
+}
+
+.publications-heading .underline {
+    height: 4px;
+    width: 120px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.publication-content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 110vh;
-    padding: 50px;
-    background-color: #0c013af7;
-    position: relative;
-    overflow-x: hidden;
+    width: 100%;
+    margin-top: 3rem;
 }
 
 .publication-container {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.publication-container.animate {
-    animation: fade-in-up 0.8s ease-out forwards;
-    opacity: 1;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 .publication-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
+    flex: 1;
+    min-height: 250px;
+    max-width: 300px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(110, 255, 255, 0.941);
-    border: 2px solid #60eaff;
 }
 
 .publication-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    border-radius: 20px;
+    transition: transform 0.5s ease;
 }
 
 .publication-details {
-    position: relative;
-    z-index: 2;
-    background-color: #d4a6fe;
-    padding: 30px;
-    width: 100%;
-    top: 20px;
-    transform: translateY(0);
-    transition: transform 0.3s ease;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #68deff;
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .publication-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.4;
 }
 
-.publication-doi a {
-    font-size: 16px;
-    color: #6b04a2;
+.publication-doi {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.doi-label {
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+.doi-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.doi-link:hover {
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
 .publication-description {
-    font-size: 16px;
-    color: #262222;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
-/* Publication Nav Buttons */
-#publications .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    background-color: #60eaff;
-    border: none;
-    font-size: 24px;
-    color: #000;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.publication-actions {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    gap: 0.8rem;
 }
 
-#publications #prev-publication {
-    left: -80px;
+.publication-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: normal;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
-#publications #next-publication {
-    right: -80px;
+.paper-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: 1px solid transparent;
 }
 
-#publications .nav-button:hover {
-    background-color: #6b04a2;
-    color: #fff;
-    box-shadow: 0 6px 20px rgba(110, 255, 255, 0.4);
+.certificate-button {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
-#publications #prev-publication,
-#publications #next-publication {
-    visibility: visible;
+.publication-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive */
-@media screen and (max-width: 1024px) {
-    .publication-container {
-        width: 80%;
-    }
-
-    .publication-image {
-        width: 250px;
-        height: 250px;
-    }
-
-    .publication-details {
-        width: 90%;
-        top: 10px;
-    }
-
-    #publications #prev-publication {
-        left: -60px;
-    }
-
-    #publications #next-publication {
-        right: -60px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .publication-container {
-        width: 90%;
-    }
-
-    .publication-image {
-        width: 220px;
-        height: 220px;
-    }
-
-    .publication-details {
-        width: 100%;
-        top: 10px;
-    }
-
-    #publications .nav-button {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    #publications #prev-publication {
-        left: -50px;
-    }
-
-    #publications #next-publication {
-        right: -50px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .publication-container {
-        width: 100%;
-    }
-
-    .publication-image {
-        width: 180px;
-        height: 180px;
-    }
-
-    .publication-details {
-        width: 100%;
-        top: 10px;
-    }
-
-    #publications .nav-button {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-    }
-
-    #publications #prev-publication {
-        left: -40px;
-    }
-
-    #publications #next-publication {
-        right: -40px;
-    }
-}
-
-/* Shared animation */
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Dark Mode */
+.light-mode #projects {
+    background-color: #ffffffed;
 }
 
 
-
-
-
-
-/* Publications Section */
-#publications {
-  padding: 40px 20px;
-  overflow: hidden;
+/* Dark Mode Styles */
+.dark-mode #publications {
+    background-color: var(--section-bg-dark);
 }
 
-/* Animated Header - Both elements start hidden */
-#publications h2.publications-heading {
-  color: #fff;
-  font-size: 2.8rem;
-  text-align: center;
-  margin: 0 auto 60px;
-  padding: 0 20px 20px;
-  position: relative;
-  opacity: 0;
+.dark-mode .publication-container {
+    background: #0a0e3a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Text slides from left */
-#publications h2.publications-heading .heading-text {
-  display: inline-block;
-  transform: translateX(-100px);
-  transition: all 0.5s ease-out;
+.dark-mode .publications-heading,
+.dark-mode .publication-title,
+.dark-mode .doi-label {
+    color: #ffffff;
 }
 
-/* Underline slides from right */
-#publications h2.publications-heading .underline {
-  position: absolute;
-  bottom: 0;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #9d00ff, #60eaff);
-  border-radius: 2px;
-  transform: translateX(100px);
-  transition: all 0.5s ease-out;
-  left: calc(50% - 50px); /* Center position */
+.dark-mode .publication-description {
+    color: #b8c2d8;
 }
 
-/* Animated state - both move to center simultaneously */
-#publications h2.publications-heading.animate {
-  opacity: 1;
-}
-
-#publications h2.publications-heading.animate .heading-text,
-#publications h2.publications-heading.animate .underline {
-  transform: translateX(0);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  #publications h2.publications-heading {
-    font-size: 2.2rem;
-  }
-  
-  #publications h2.publications-heading .underline {
-    width: 80px;
-    left: calc(50% - 40px);
-  }
+.dark-mode .certificate-button {
+    color: #a78bfa;
+    border-color: #a78bfa;
 }

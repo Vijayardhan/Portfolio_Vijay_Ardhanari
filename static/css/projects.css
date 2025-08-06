@@ -208,6 +208,11 @@
     background-color: #01052c;
 }
 
+/* Dark Mode */
+.light-mode #projects {
+    background-color: #ffffffed;
+}
+
 .dark-mode .project-card {
     background: #0a1235;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);

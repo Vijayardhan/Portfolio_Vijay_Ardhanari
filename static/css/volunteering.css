@@ -196,3 +196,113 @@
         font-size: 2rem;
     }
 }
+
+/* Light Theme */
+#volunteer {
+    background-color: #ffffff;
+}
+
+.volunteer-heading {
+    color: #212529;
+}
+
+.title-underline {
+    background: linear-gradient(90deg, #007bff, #00b4ff);
+}
+
+.volunteer-item {
+    background-color: #ffffff;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.1);
+}
+
+.volunteer-item:hover {
+    box-shadow: 0 6px 30px rgba(0, 123, 255, 0.3);
+}
+
+.volunteer-title {
+    color: #212529;
+}
+
+.volunteer-image {
+    border-color: #007bff;
+}
+
+.volunteer-item:hover .volunteer-image {
+    box-shadow: 0 6px 30px rgba(0, 123, 255, 0.3);
+}
+
+.volunteer-details {
+    color: #495057;
+}
+
+.volunteer-role {
+    color: #007bff;
+}
+
+.volunteer-organization {
+    color: #17a2b8;
+}
+
+.volunteer-duration {
+    color: #6c757d;
+}
+
+.volunteer-description {
+    color: #343a40;
+}
+
+/* Dark Theme */
+.dark-mode #volunteer {
+    background-color: #0a041a;
+}
+
+.dark-mode .volunteer-heading {
+    color: #fff;
+}
+
+.dark-mode .title-underline {
+    background: linear-gradient(90deg, #9d00ff, #60eaff);
+}
+
+.dark-mode .volunteer-item {
+    background-color: #09022cf7;
+    border-color: #68deff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .volunteer-item:hover {
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.dark-mode .volunteer-title {
+    color: #ffffff;
+}
+
+.dark-mode .volunteer-image {
+    border-color: #68deff;
+}
+
+.dark-mode .volunteer-item:hover .volunteer-image {
+    box-shadow: 0 6px 30px #bb63ff;
+}
+
+.dark-mode .volunteer-details {
+    color: #b36cff;
+}
+
+.dark-mode .volunteer-role {
+    color: #912ffa;
+}
+
+.dark-mode .volunteer-organization {
+    color: #a545ff;
+}
+
+.dark-mode .volunteer-duration {
+    color: #9f39fe;
+}
+
+.dark-mode .volunteer-description {
+    color: #76f1ff;
+}

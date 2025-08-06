@@ -1,0 +1,79 @@
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .volunteer-header {
+        padding-left: 30px;
+    }
+    
+    .volunteer-heading {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #volunteer {
+        position: relative; /* Needed for absolute positioning context */
+        padding-top: 100px; /* Make room for the absolutely positioned header */
+    }
+
+    .volunteer-header {
+       position: absolute;
+        top: 20px; /* Distance from the top of #skills */
+        left: 0; /* Start from the left edge */
+        right: 0; /* Stretch to the right edge */
+        text-align: center; /* Center the text horizontally */
+        margin: 0 auto; /* Auto margins help in centering */
+        width: 100%; /* Take full width to allow proper centering */
+        padding: 0 1.5rem; /* Optional: Add padding to prevent edge sticking */
+        padding-top: 30px;
+    }
+    
+    .volunteer-container {
+        margin-top: 60px; /* Increased space between header and containers */
+        padding-top: 40px; /* Removed the extra padding */
+    }
+    
+    .volunteer-heading {
+        font-size: 2rem;
+    }
+    
+    .volunteer-item {
+        width: calc(100% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #volunteer {
+        padding-top: 80px; /* Slightly less padding for smaller screens */
+    }
+
+    .volunteer-header {
+        padding: 0 1rem;
+    }
+    
+    .volunteer-container {
+        margin-top: 40px;
+    }
+    
+    .volunteer-heading {
+        font-size: 1.8rem;
+    }
+    
+    .volunteer-heading .underline {
+        width: 80px;
+    }
+    
+    .volunteer-item {
+        min-height: 350px;
+    }
+    
+    .volunteer-title {
+        font-size: 24px;
+    }
+    
+    .volunteer-role {
+        font-size: 20px;
+    }
+}
+
+

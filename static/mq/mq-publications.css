@@ -1,0 +1,93 @@
+/* Tablets and Laptops */
+@media (min-width: 769px) {
+    .publications-header {
+        text-align: left;
+        padding-left: 2rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    #publications {
+        padding: 5rem 1rem 2rem;
+        min-height: auto;
+    }
+    
+    .publications-header {
+        position: absolute;
+        top: 20px; /* Distance from the top of #skills */
+        left: 0; /* Start from the left edge */
+        right: 0; /* Stretch to the right edge */
+        text-align: center; /* Center the text horizontally */
+        margin: 0 auto; /* Auto margins help in centering */
+        width: 100%; /* Take full width to allow proper centering */
+        padding: 0 1.5rem; /* Optional: Add padding to prevent edge sticking */
+        padding-top: 30px;
+    }
+    
+    .publications-heading {
+        font-size: 1.8rem;
+    }
+    
+    .publication-content {
+        margin-top: 3.5rem;
+        
+    }
+    
+    .publication-container {
+        flex-direction: column;
+        max-width: 400px;
+        
+    }
+    
+    .publication-image {
+        max-width: 100%;
+        min-height: 180px;
+    }
+    
+    .publication-details {
+        padding: 1.2rem;
+    }
+    
+    .publication-title {
+        font-size: 1.2rem;
+    }
+    
+    .publication-actions {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    
+    .publication-button {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    #publications {
+        padding: 4rem 0.5rem 1.5rem;
+    }
+    
+    .publications-heading {
+        font-size: 1.6rem;
+    }
+    
+    .publication-container {
+        max-width: 350px;
+    }
+    
+    .publication-image {
+        min-height: 150px;
+    }
+    
+    .publication-description {
+        font-size: 0.9rem;
+    }
+    
+    .publication-button {
+        font-size: 0.85rem;
+    }
+}

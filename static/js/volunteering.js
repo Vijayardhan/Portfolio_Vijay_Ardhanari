@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    
     const options = {
         root: null,
         rootMargin: '0px',

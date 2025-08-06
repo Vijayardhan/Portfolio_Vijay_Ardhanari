@@ -1,78 +1,38 @@
-let currentPublication = 1;
-const totalPublications = 1; // Update to your actual number of publications
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize WOW.js
+    new WOW({
+        offset: 30,
+        mobile: true
+    }).init();
 
-function updatePublicationDisplay() {
-    for (let i = 1; i <= totalPublications; i++) {
-        const pub = document.getElementById(`publication-${i}`);
-        if (pub) {
-            pub.style.display = 'none';
+    // Theme change handler
+    function updatePublicationsTheme() {
+        const publicationsSection = document.getElementById('publications');
+        if (document.body.classList.contains('dark-mode')) {
+            publicationsSection.style.backgroundColor = 'var(--section-bg-dark)';
+        } else {
+            publicationsSection.style.backgroundColor = 'var(--section-bg-light)';
         }
     }
 
-    const current = document.getElementById(`publication-${currentPublication}`);
-    if (current) {
-        current.style.display = 'flex';
+    // Initialize theme
+    updatePublicationsTheme();
+    
+    // Listen for theme changes
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', updatePublicationsTheme);
     }
 
-    const prevBtn = document.getElementById('prev-publication');
-    const nextBtn = document.getElementById('next-publication');
-
-    if (prevBtn && nextBtn) {
-        prevBtn.style.visibility = currentPublication > 1 ? 'visible' : 'hidden';
-        nextBtn.style.visibility = currentPublication < totalPublications ? 'visible' : 'hidden';
-    }
-}
-
-document.getElementById('prev-publication').addEventListener('click', () => {
-    if (currentPublication > 1) {
-        currentPublication--;
-        updatePublicationDisplay();
-    }
-});
-
-document.getElementById('next-publication').addEventListener('click', () => {
-    if (currentPublication < totalPublications) {
-        currentPublication++;
-        updatePublicationDisplay();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    updatePublicationDisplay();
-
-    // Intersection Observer for fade-in animation
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
+    // Add hover effect to buttons
+    const buttons = document.querySelectorAll('.publication-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.classList.add('animate__animated', 'animate__pulse');
         });
-    }, options);
-
-    document.querySelectorAll('.publication-container').forEach(container => {
-        observer.observe(container);
+        
+        button.addEventListener('mouseleave', function() {
+            this.classList.remove('animate__animated', 'animate__pulse');
+        });
     });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const publicationsSection = document.querySelector('#publications');
-  const publicationsHeading = document.querySelector('#publications h2.publications-heading');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        publicationsHeading.classList.add('animate');
-      }
-    });
-  }, { threshold: 0.3 });
-  
-  observer.observe(publicationsSection);
 });
