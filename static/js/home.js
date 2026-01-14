@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typing animation with improved loop
     function setupTypingAnimation() {
         const typingText = document.querySelector('.typing-text');
-        const text = "IoT | Automation | Testing";
+        const text = "Electrical | Electronics | IOT";
         let index = 0;
         let isDeleting = false;
         let speed = 150;
