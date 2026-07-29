@@ -5,18 +5,21 @@
     --text-secondary: #475569;
     --card-bg: #ffffff;
     --section-bg-light: #ffffffdc;
-    --section-bg-dark: #01052cff;
+    --section-bg-dark: #01052c;
     --primary-gradient: linear-gradient(90deg, #2563eb, #7c3aed);
 }
 
-/* Base Styles */
+/* ============ SECTION ============ */
+
 #publications {
-    padding: 6rem 2rem 3rem;
-    position: relative;
-    transition: all 0.5s ease;
-    font-family: Georgia, serif;
     min-height: 100vh;
+    padding: 7rem 5rem 4rem;
+    position: relative;
     box-sizing: border-box;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    background-color: var(--section-bg-light);
+    transition: background-color 0.5s ease;
 }
 
 .publications-header {
@@ -27,160 +30,289 @@
 }
 
 .publications-heading {
+    display: inline-block;
+    position: relative;
+    margin: 0;
     font-size: 2rem;
     font-weight: normal;
-    margin-bottom: 0.5rem;
-    position: relative;
-    display: inline-block;
     color: var(--text-color);
 }
 
 .publications-heading .underline {
-    height: 4px;
+    display: block;
     width: 120px;
-    background: var(--primary-gradient);
+    height: 4px;
+    margin-top: 8px;
     border-radius: 2px;
+    background: var(--primary-gradient);
 }
 
-.publication-content {
+/* ============ CAROUSEL ============ */
+
+.publications-carousel {
+    width: 100%;
+    max-width: 1050px;
+    margin: 4rem auto 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 3rem;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
-.publication-container {
-    display: flex;
-    background: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    max-width: 800px;
+.publication-carousel-wrapper {
     width: 100%;
-    transition: all 0.3s ease;
+    max-width: 850px;
+    overflow: hidden;
+    border-radius: 12px;
 }
+
+.publication-carousel-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.55s ease;
+    will-change: transform;
+}
+
+.publication-card {
+    min-width: 100%;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+/* ============ IMAGE ============ */
 
 .publication-image {
-    flex: 1;
-    min-height: 250px;
-    max-width: 300px;
+    flex: 0 0 320px;
+    min-height: 360px;
     overflow: hidden;
+    background: #f1f5f9;
 }
 
 .publication-image img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
+.publication-card:hover .publication-image img {
+    transform: scale(1.04);
+}
+
+/* ============ CONTENT ============ */
+
 .publication-details {
     flex: 1;
-    padding: 1.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .publication-title {
-    font-size: 1.3rem;
-    font-weight: normal;
     margin-bottom: 1rem;
     color: var(--text-color);
-    line-height: 1.4;
+    font-size: 1.35rem;
+    font-weight: normal;
+    line-height: 1.45;
 }
 
-.publication-doi {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+.publication-reference {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
 }
 
-.doi-label {
-    font-weight: normal;
+.reference-label {
     color: var(--text-color);
 }
 
-.doi-link {
+.reference-value {
+    color: var(--primary-color);
+}
+
+.reference-link {
     color: var(--primary-color);
     text-decoration: none;
+    word-break: break-word;
     transition: color 0.3s ease;
 }
 
-.doi-link:hover {
+.reference-link:hover {
     color: var(--secondary-color);
     text-decoration: underline;
 }
 
 .publication-description {
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 1rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
 }
+
+.publication-status {
+    margin-bottom: 1.4rem;
+    padding-left: 10px;
+    border-left: 3px solid var(--secondary-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ============ BUTTONS ============ */
 
 .publication-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.8rem;
 }
 
 .publication-button {
     display: inline-block;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
+    padding: 0.65rem 1.25rem;
+    border-radius: 5px;
     text-decoration: none;
-    font-weight: normal;
-    transition: all 0.3s ease;
     font-size: 0.9rem;
+    font-weight: normal;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
 }
 
 .paper-button {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: #ffffff;
     border: 1px solid transparent;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
 }
 
 .certificate-button {
-    background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+    background: transparent;
 }
 
 .publication-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 9px rgba(15, 23, 42, 0.15);
 }
 
-/* Dark Mode */
-.light-mode #projects {
-    background-color: #ffffffed;
+/* ============ NAVIGATION ============ */
+
+.publication-carousel-nav {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.25);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
+.publication-carousel-nav:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.35);
+}
 
-/* Dark Mode Styles */
-.dark-mode #publications {
+.publication-carousel-nav:active {
+    transform: scale(0.96);
+}
+
+.publication-carousel-nav:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.3);
+    outline-offset: 3px;
+}
+
+/* ============ PAGINATION DOTS ============ */
+
+.publication-pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 1.5rem;
+}
+
+.publication-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition:
+        width 0.3s ease,
+        border-radius 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.publication-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: var(--primary-gradient);
+}
+
+/* ============ DARK MODE ============ */
+
+body.dark-mode #publications {
     background-color: var(--section-bg-dark);
 }
 
-.dark-mode .publication-container {
+body.dark-mode .publication-card {
     background: #0a0e3a;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.dark-mode .publications-heading,
-.dark-mode .publication-title,
-.dark-mode .doi-label {
+body.dark-mode .publications-heading,
+body.dark-mode .publication-title,
+body.dark-mode .reference-label {
     color: #ffffff;
 }
 
-.dark-mode .publication-description {
+body.dark-mode .publication-description,
+body.dark-mode .publication-status {
     color: #b8c2d8;
 }
 
-.dark-mode .certificate-button {
+body.dark-mode .publication-image {
+    background: #11164a;
+}
+
+body.dark-mode .certificate-button {
     color: #a78bfa;
     border-color: #a78bfa;
+}
+
+body.dark-mode .publication-dot {
+    background: #4b5563;
+}
+
+body.dark-mode .publication-dot.active {
+    background: var(--primary-gradient);
 }

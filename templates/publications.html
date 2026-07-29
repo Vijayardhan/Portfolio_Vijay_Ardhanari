@@ -1,46 +1,168 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-publications.css') }}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+>
 
 <section id="publications">
     <div class="publications-header">
         <h2 class="publications-heading wow animate__animated animate__fadeIn">
             <span class="heading-text">Publications</span>
-            <span class="underline wow animate__animated animate__fadeInLeft" data-wow-delay="0.3s"></span>
+            <span
+                class="underline wow animate__animated animate__fadeInLeft"
+                data-wow-delay="0.3s"
+            ></span>
         </h2>
     </div>
 
-    <div class="publication-content wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
-        <div class="publication-container">
-            <div class="publication-image">
-                <img src="https://i.ibb.co/tMjS0KdZ/1630594774018.jpg" alt="EchoGlove Project Image" 
-                     class="wow animate__animated animate__zoomIn" data-wow-delay="0.7s">
-            </div>
-            <div class="publication-details">
-                <div class="publication-title wow animate__animated animate__fadeInRight" data-wow-delay="0.8s">
-                    EchoGlove: Assistive Smart Glove for Gesture-Based Communication and Health Monitoring
-                </div>
-                <div class="publication-doi wow animate__animated animate__fadeInRight" data-wow-delay="0.9s">
-                    <span class="doi-label">DOI:</span>
-                    <a href="https://doi.org/10.22214/ijraset.2025.66821" target="_blank" class="doi-link">
-                        10.22214/ijraset.2025.66821
-                    </a>
-                </div>
-                <div class="publication-description wow animate__animated animate__fadeInUp" data-wow-delay="1s">
-                    This smart glove integrates an ESP32 microcontroller with Bluetooth, a speaker for voice output, a pulse sensor for health monitoring, an ultrasonic sensor for obstacle detection, and flex sensors for hand gesture recognition. It converts gestures into speech, aids navigation, and monitors heart rate, enhancing communication and safety for individuals with speech impairments.
-                </div>
-                <div class="publication-actions wow animate__animated animate__fadeInUp" data-wow-delay="1.1s">
-                    <a href="https://doi.org/10.22214/ijraset.2025.66821" class="publication-button paper-button" target="_blank">
-                        View Paper
-                    </a>
-                    <a href="https://drive.google.com/file/d/1YUxU2yz3NwZv8csdpsJG2QC-SvOq3gqX/view?usp=sharing" class="publication-button certificate-button" target="_blank">
-                        View Certificate
-                    </a>
-                </div>
+    <div
+        class="publications-carousel wow animate__animated animate__fadeInUp"
+        data-wow-delay="0.5s"
+    >
+        <button
+            class="publication-carousel-nav publication-prev"
+            type="button"
+            aria-label="Previous publication"
+        >
+            &lt;
+        </button>
+
+        <div class="publication-carousel-wrapper">
+            <div class="publication-carousel-container">
+
+                <!-- EchoGlove Publication -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <img
+                            src="https://i.ibb.co/tMjS0KdZ/1630594774018.jpg"
+                            alt="EchoGlove assistive smart glove"
+                        >
+                    </div>
+
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            EchoGlove: Assistive Smart Glove for Gesture-Based
+                            Communication and Health Monitoring
+                        </div>
+
+                        <div class="publication-reference">
+                            <span class="reference-label">DOI:</span>
+
+                            <a
+                                href="https://doi.org/10.22214/ijraset.2025.66821"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="reference-link"
+                            >
+                                10.22214/ijraset.2025.66821
+                            </a>
+                        </div>
+
+                        <div class="publication-description">
+                            Developed an ESP32-based assistive glove that
+                            recognises hand gestures and converts them into
+                            speech. The system also supports heart-rate
+                            monitoring, obstacle detection, Bluetooth
+                            communication, and audio output to improve
+                            communication and safety for people with speech
+                            impairments.
+                        </div>
+
+                        <div class="publication-actions">
+                            <a
+                                href="https://doi.org/10.22214/ijraset.2025.66821"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="publication-button paper-button"
+                            >
+                                View Paper
+                            </a>
+
+                            <a
+                                href="https://drive.google.com/file/d/1YUxU2yz3NwZv8csdpsJG2QC-SvOq3gqX/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="publication-button certificate-button"
+                            >
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Automated Drug Dispenser Publication -->
+                <article class="publication-card">
+                    <div class="publication-image">
+                        <img
+                            src="https://i.ibb.co/S4L7FNd6/Whats-App-Image-2026-07-29-at-03-31-15.jpg"
+                            alt="Automated drug dispenser project"
+                        >
+                    </div>
+
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            Automated Drug Dispenser: Revolutionizing Healthcare
+                            Through Advanced Pharmacy Management
+                        </div>
+
+                        <div class="publication-reference">
+                            <span class="reference-label">Paper ID:</span>
+                            <span class="reference-value">ICCET250787</span>
+                        </div>
+
+                        <div class="publication-description">
+                            Developed an automated pharmacy system that digitises
+                            prescriptions using QR codes containing doctor,
+                            patient, medication, and dosage information. The
+                            dispenser separates medicines into morning,
+                            afternoon, and night doses, supports symptom-based OTC
+                            purchases, and integrates digital payments to reduce
+                            dispensing errors and improve efficiency.
+                        </div>
+
+                        <div class="publication-status">
+                            Presented at the ICCET conference and submitted for
+                            publication in a Scopus-indexed journal.
+                        </div>
+
+                        <div class="publication-actions">
+                            <a
+                                href="https://drive.google.com/file/d/1hiIea-KzsTS_6ihKpOuupqnmZHKrXPqo/view?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="publication-button paper-button"
+                            >
+                                View Paper
+                            </a>
+
+                            <a
+                                href="https://drive.google.com/file/d/16Pe30d-Jc1AcSAdlGwK3VuID4nGM3P_m/view?usp=drive_link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="publication-button certificate-button"
+                            >
+                                View Certificate
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
+
+        <button
+            class="publication-carousel-nav publication-next"
+            type="button"
+            aria-label="Next publication"
+        >
+            &gt;
+        </button>
     </div>
+
+    <div class="publication-pagination-dots"></div>
 </section>
 
-<script src="{{ url_for('static', filename='js/publications.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="{{ url_for('static', filename='js/publications.js') }}"></script>

@@ -1,4 +1,5 @@
 <!-- templates/experience.html -->
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/experience.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-experience.css') }}">
 
@@ -9,83 +10,155 @@
     </div>
 
     <div class="experience-container">
-        <!-- Timeline line -->
-        <!-- <div class="timeline-line"></div> -->
-        
+
+        <!-- TTZ Landsberg Experience -->
+        <div class="timeline-item">
+            <div class="timeline-circle">
+                <img
+                    src="https://i.ibb.co/zhtFF9c9/ttz-landsberg-logo.jpg"
+                    alt="TTZ Landsberg"
+                >
+            </div>
+
+            <div class="timeline-content">
+                <h1>TTZ Landsberg</h1>
+                <p class="role-duration">
+                    Embedded CAN Communication and Battery Monitoring | Academic Project
+                </p>
+                <p class="date">Oct 2025 - Mar 2026</p>
+
+                <div class="details">
+                    <ul class="accomplishments">
+                        <li>Developed STM32 firmware for a CAN-based signalling and battery monitoring module for an autonomous vehicle prototype.</li>
+                        <li>Implemented battery voltage acquisition, signal processing, DMA-based CAN transmission, and diagnostic alerts.</li>
+                        <li>Configured CANopen Node IDs and PDO mapping, and validated battery and sensor data using PCAN and PuTTY.</li>
+                    </ul>
+
+                    <div class="tech-section">
+                        <h3>Tech Stack</h3>
+
+                        <div class="tech-tags">
+                            <span>STM32</span>
+                            <span>Embedded C</span>
+                            <span>CAN Bus</span>
+                            <span>CANopen</span>
+                            <span>Battery Monitoring</span>
+                            <span>PCAN</span>
+                            <span>PuTTY</span>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button
+                            class="gradient-btn"
+                            onclick="window.open('https://www.tha.de/TTZ-Landsberg.html', '_blank')"
+                        >
+                            Website
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Scrapify Experience -->
         <div class="timeline-item">
             <div class="timeline-circle">
-                <img src="https://i.ibb.co/NL34sXd/Screenshot-2024-08-10-090956.png" alt="Scrapify Ecotech">
+                <img
+                    src="https://i.ibb.co/NL34sXd/Screenshot-2024-08-10-090956.png"
+                    alt="Scrapify Ecotech"
+                >
             </div>
+
             <div class="timeline-content">
                 <h1>Scrapify Ecotech Pvt. Ltd.</h1>
                 <p class="role-duration">Project Trainee | Internship</p>
-                <p class="date">Feb 2024 - Aug 2024 (6 months)</p>
-                
+                <p class="date">Feb 2024 - Aug 2024</p>
+
                 <div class="details">
                     <ul class="accomplishments">
-                        <li>Led electronics and motor subsystem development for autonomous water-waste collector drone systems.</li>
-                        <li>Worked on hardware integration and system testing for a UV-based water treatment robot.</li>
-                        <li>Conducted field testing, debugging, and system optimization to improve performance.</li>
+                        <li>Integrated sensors, thruster control, LoRa communication, and battery power systems for an autonomous water drone.</li>
+                        <li>Used the BQ76925 IC to monitor battery voltage, current, and temperature and support protection and fault detection.</li>
+                        <li>Performed internal resistance, capacity, and charge-discharge testing during 13+ field trials and analysed battery performance data.</li>
                     </ul>
-                    
+
                     <div class="tech-section">
                         <h3>Tech Stack</h3>
+
                         <div class="tech-tags">
-                            <span>IoT Systems</span>
-                            <span>Electrical Testing</span>
-                            <span>Hardware Validation</span>
-                            <span>Sensors</span>
-                            <span>Electronics</span>
+                            <span>Battery Testing</span>
+                            <span>BQ76925</span>
+                            <span>Battery Monitoring</span>
+                            <span>LoRa</span>
+                            <span>Python/Flask</span>
+                            <span>SQL</span>
+                            <span>Power BI</span>
                         </div>
                     </div>
-                    
+
                     <div class="action-buttons">
-                        <button class="gradient-btn" onclick="window.open('https://scrapifyecotech.in/')">Website</button>
-                        <button class="outline-btn" onclick="window.open('https://drive.google.com/file/d/12DSYbWMOinLd18uDFcQD36e5iB6k_LmO/view')">Certificate</button>
+                        <button
+                            class="gradient-btn"
+                            onclick="window.open('https://scrapifyecotech.in/', '_blank')"
+                        >
+                            Website
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- STEAM Troops Experience -->
         <div class="timeline-item">
             <div class="timeline-circle">
-                <img src="https://i.ibb.co/Zfbw05P/Screenshot-2024-08-09-235935.png" alt="STEAM Troops">
+                <img
+                    src="https://i.ibb.co/Zfbw05P/Screenshot-2024-08-09-235935.png"
+                    alt="STEAM Troops Innovation Labs"
+                >
             </div>
+
             <div class="timeline-content">
-                <h1>STEAM Troops Innovation Labs</h1>
-                <p class="role-duration">Product Development Electronics | Internship</p>
-                <p class="date">Jun 2023 - Sep 2023 (3 months)</p>
-                
+                <h1>STEAM Troops Innovation Labs Pvt. Ltd.</h1>
+                <p class="role-duration">
+                    Product Development - Electronics | Internship
+                </p>
+                <p class="date">May 2023 - Oct 2023</p>
+
                 <div class="details">
                     <ul class="accomplishments">
-                        <li>Contributed to end-to-end electronics product development from design to testing and refinement.</li>
-                        <li>Led development of STEM-based educational electronics kits through cross-functional collaboration.</li>
-                        <li>Supported production, testing, and delivery of hands-on STEM workshops.</li>
+                        <li>Built and tested Arduino, ESP32, and Raspberry Pi-based electronics kits from prototype through final assembly.</li>
+                        <li>Diagnosed recurring circuit, signal, and assembly faults using oscilloscopes and multimeters.</li>
+                        <li>Handled component integration, soldering, hardware validation, and product preparation before delivery.</li>
                     </ul>
-                    
+
                     <div class="tech-section">
                         <h3>Tech Stack</h3>
+
                         <div class="tech-tags">
-                            <span>Prototyping</span>
-                            <span>Product Design</span>
-                            <span>Electronics</span>
-                            <span>Vendor Management</span>
+                            <span>Arduino</span>
+                            <span>ESP32</span>
+                            <span>Raspberry Pi</span>
+                            <span>Oscilloscope</span>
+                            <span>Multimeter</span>
+                            <span>Soldering</span>
+                            <span>Hardware Validation</span>
                         </div>
                     </div>
-                    
+
                     <div class="action-buttons">
-                        <button class="gradient-btn" onclick="window.open('https://www.steamtroops.com/')">Website</button>
-                        <button class="outline-btn" onclick="window.open('https://drive.google.com/file/d/1MMIniMo23QrOrVQvZCdSAC9LxbeDS8Il/view')">Certificate</button>
+                        <button
+                            class="gradient-btn"
+                            onclick="window.open('https://www.steamtroops.com/', '_blank')"
+                        >
+                            Website
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
-<script src="{{ url_for('static', filename='js/experience.js') }}"></script>
-<!-- Add these before your experience.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="{{ url_for('static', filename='js/experience.js') }}"></script>

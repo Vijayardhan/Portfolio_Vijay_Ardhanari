@@ -5,31 +5,76 @@
     <div class="content-wrapper">
         <div class="content-left">
             <div class="intro-text">
-                <img src="https://i.ibb.co/x77g4TK/sign.png" alt="Sign Icon" class="sign-icon">
+
+                <img
+                    src="https://i.ibb.co/x77g4TK/sign.png"
+                    alt="Sign Icon"
+                    class="sign-icon"
+                >
+
                 <p class="greeting">Hey there, I'm</p>
+
                 <h1 id="name">Vijay Ardhanari</h1>
+
                 <div class="typing-container">
-                    <span class="typing-text">Electrical | Electronics | Embedded</span>
+                    <div class="typing-text">
+                        <span id="typing-line1"></span>
+                        <span id="typing-line2"></span>
+                    </div>
                 </div>
+
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/vijay-ardhanari-115780258/" target="_blank" aria-label="LinkedIn">
-                        <img src="https://i.ibb.co/5XZbK5M/linkedin-3.png" alt="LinkedIn" class="social-icon">
+                    <a
+                        href="https://www.linkedin.com/in/vijay-ardhanari-115780258/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        <img
+                            src="https://i.ibb.co/5XZbK5M/linkedin-3.png"
+                            alt="LinkedIn"
+                            class="social-icon"
+                        >
                     </a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vijayardhan32@gmail.com" 
-                       target="_blank" 
-                       aria-label="Email">
-                     <img src="https://i.ibb.co/C56W2r3/gmail-2.png" alt="Email" class="social-icon">
+
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=vijayardhan32@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Email"
+                    >
+                        <img
+                            src="https://i.ibb.co/C56W2r3/gmail-2.png"
+                            alt="Email"
+                            class="social-icon"
+                        >
                     </a>
-                    <a href="https://github.com/Vijayardhan" target="_blank" aria-label="GitHub">
-                        <img src="https://i.ibb.co/kyLRmQX/github.png" alt="GitHub" class="social-icon">
+
+                    <a
+                        href="https://github.com/Vijayardhan"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        <img
+                            src="https://i.ibb.co/kyLRmQX/github.png"
+                            alt="GitHub"
+                            class="social-icon"
+                        >
                     </a>
                 </div>
+
                 <a href="#Contact" class="contact-button">Contact Me</a>
             </div>
         </div>
+
         <div class="profile-container">
             <div class="profile-circle">
-                <img src="https://i.ibb.co/8LWZqVmJ/DSC-6293-Copy.jpg" alt="Vijay A Profile Picture" class="profile-image">
+                <img
+                    src="https://i.ibb.co/8LWZqVmJ/DSC-6293-Copy.jpg"
+                    alt="Vijay Ardhanari"
+                    class="profile-image"
+                >
             </div>
         </div>
     </div>
@@ -37,92 +82,77 @@
 
 <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 
-
-
-
-
-
 <style>
-  /* Base button styles */
-  
-  
-  /* Button click effect */
-  .contact-button:active {
-    transform: translateY(1px);
-  }
-  
-  /* Ripple effect */
-  .contact-button::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-  }
-  
-  .contact-button:focus:not(:active)::after {
-    animation: ripple 0.6s ease-out;
-  }
-  
-  @keyframes ripple {
-    0% {
-      transform: scale(0, 0);
-      opacity: 0.5;
+    .contact-button:active {
+        transform: translateY(1px);
     }
-    100% {
-      transform: scale(20, 20);
-      opacity: 0;
+
+    .contact-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
     }
-  }
-  
-  /* Smooth scrolling for the page */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Section transition animation */
-  #Contact {
-    animation: fadeIn 0.8s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+
+    .contact-button:focus:not(:active)::after {
+        animation: ripple 0.6s ease-out;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes ripple {
+        0% {
+            transform: scale(0, 0);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: scale(20, 20);
+            opacity: 0;
+        }
     }
-  }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #Contact {
+        animation: fadeIn 0.8s ease-in-out;
+    }
 </style>
 
 <script>
-  document.querySelector('.contact-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    // Add a temporary class for click animation
-    this.classList.add('clicked');
-    
-    // Remove the class after animation completes
-    setTimeout(() => {
-      this.classList.remove('clicked');
-    }, 400);
-    
-    // Scroll to the contact section
-    const contactSection = document.querySelector('#Contact');
-    contactSection.scrollIntoView({ behavior: 'smooth' });
-    
-    // Add highlight animation to contact section
-    contactSection.style.animation = 'none';
-    setTimeout(() => {
-      contactSection.style.animation = 'fadeIn 0.8s ease-in-out';
-    }, 10);
-  });
+    document.addEventListener('DOMContentLoaded', function () {
+        const contactButton = document.querySelector('.contact-button');
+        const contactSection = document.querySelector('#Contact');
+
+        if (!contactButton || !contactSection) {
+            return;
+        }
+
+        contactButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            this.classList.add('clicked');
+
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 400);
+
+            contactSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            contactSection.style.animation = 'none';
+
+            setTimeout(() => {
+                contactSection.style.animation = 'fadeIn 0.8s ease-in-out';
+            }, 10);
+        });
+    });
 </script>

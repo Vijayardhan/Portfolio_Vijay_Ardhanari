@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Skills Section</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='mq/mq-skills.css') }}">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
+
 <body>
     <section id="skills">
         <div class="skills-header">
@@ -16,91 +20,148 @@
         </div>
 
         <div class="skills-columns-container">
-            <!-- Tech & Tools Column -->
+
+            <!-- Tech Stack Column -->
             <div class="skills-column tech-column">
-                <h2 class="column-title">Tech & Tools</h2>
+                <h2 class="column-title">Tech Stack</h2>
+
                 <div class="skills-grid">
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/21wvsc5d/images.png" alt="IoT">
+                            <img
+                                src="https://api.iconify.design/mdi/integrated-circuit-chip.svg?color=%2300bcd4"
+                                alt="Embedded Systems"
+                            >
                         </div>
                         <span class="skill-name">Embedded Systems</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/TYpt4LC/microchip.png" alt="Microcontrollers">
+                            <img
+                                src="https://api.iconify.design/mdi/battery-charging-high.svg?color=%23f4c430"
+                                alt="Battery Testing and BMS Validation"
+                            >
+                        </div>
+                        <span class="skill-name">
+                            Battery Testing<br>
+                            &amp; BMS Validation
+                        </span>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img
+                                src="https://api.iconify.design/mdi/lan-connect.svg?color=%2300bcd4"
+                                alt="CAN Communication"
+                            >
+                        </div>
+                        <span class="skill-name">CAN Communication</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img
+                                src="https://api.iconify.design/mdi/memory.svg?color=%2300bcd4"
+                                alt="Microcontrollers"
+                            >
                         </div>
                         <span class="skill-name">Microcontrollers</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/B5TFZ14X/circuit-board.png" alt="Automation">
-                        </div>
-                        <span class="skill-name">Electronics</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="https://i.ibb.co/HDHTRkFL/electricity.png" alt="Electrical Testing">
-                        </div>
-                        <span class="skill-name">Electrical Testing</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="https://i.ibb.co/j9cdCNKF/motherboard-1.png" alt="Python">
+                            <img
+                                src="https://i.ibb.co/j9cdCNKF/motherboard-1.png"
+                                alt="Hardware Validation"
+                            >
                         </div>
                         <span class="skill-name">Hardware Validation</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/n8mqLHMn/prototype.png" alt="C">
+                            <img
+                                src="https://api.iconify.design/mdi/soldering-iron.svg?color=%2300bcd4"
+                                alt="Electronics Prototyping"
+                            >
                         </div>
-                        <span class="skill-name">Prototyping</span>
+                        <span class="skill-name">Electronics Prototyping</span>
                     </div>
+
                 </div>
             </div>
 
-            <!-- Others & Hobbies Column -->
+            <!-- Tools Column -->
             <div class="skills-column hobbies-column">
-                <h2 class="column-title"></h2>
+                <h2 class="column-title">Tools</h2>
+
                 <div class="skills-grid">
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/3mSDvsSn/download.png" alt="HTML">
+                            <img
+                                src="https://cdn.simpleicons.org/stmicroelectronics/03A9F4"
+                                alt="STM32CubeIDE"
+                            >
                         </div>
-                        <span class="skill-name">Labview</span>
+                        <span class="skill-name">STM32CubeIDE</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/LDcSjrp6/download.jpg" alt="CSS">
-                        </div>
-                        <span class="skill-name">STM32CubeMX</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="https://i.ibb.co/pvLmD8N/letter-c.png" alt="JavaScript">
-                        </div>
-                        <span class="skill-name">Embedded C</span>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <img src="https://i.ibb.co/8Drx1Lb/python.png" alt="Flask">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                alt="Python"
+                            >
                         </div>
                         <span class="skill-name">Python</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/nNCj2cTC/org-kicad-Ki-Cad.webp" alt="Canva">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+                                alt="MATLAB"
+                            >
                         </div>
-                        <span class="skill-name">Kicad</span>
+                        <span class="skill-name">MATLAB</span>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-icon">
-                            <img src="https://i.ibb.co/JR7GwmsH/Matlab-Logo.png" alt="Excel">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+                                alt="Embedded C"
+                            >
                         </div>
-                        <span class="skill-name">Matlab</span>
+                        <span class="skill-name">Embedded C</span>
                     </div>
+
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                                alt="Visual Studio Code"
+                            >
+                        </div>
+                        <span class="skill-name">VS Code</span>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <img
+                                src="https://cdn.simpleicons.org/github/FFFFFF"
+                                alt="Git and GitHub"
+                            >
+                        </div>
+                        <span class="skill-name">Git/GitHub</span>
+                    </div>
+
                 </div>
             </div>
+
         </div>
     </section>
 
